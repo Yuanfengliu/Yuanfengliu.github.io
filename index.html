@@ -160,118 +160,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-入门SQL之库操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/30/入门SQL之库操作/">入门SQL之库操作</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/30/入门SQL之库操作/" class="archive-article-date">
-  	<time datetime="2018-03-30T14:34:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>创建数据库</strong>：Create database db_name [数据库选项，即名称];(每当创建一个数据库，就在mysql–&gt;date文件里创建一个文件)</p>
-<p><strong>注意：</strong>语句 要求使用语句结束符 ; 来结束。</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image001.jpg" alt="说明: 计算机生成了可选文字: 肇理缨华军军竺竺军沙，sql)&quot;&quot;e&quot;t&quot;dat&quot;ba,&quot;PhpJ&#39;「理ue&quot;,&quot;&quot;&quot;&quot;0&quot;&quot;&quot;ec&#39;ed&#39;”·”&quot;冲夕“ql&gt;一bin\.ysql一hl,ec)"></p>
-<p> <strong>标识符（数据库名）命名规则</strong>：</p>
-<p>​    大小写取决于当前操作系统。（一般认为是区分的，因为Linux是区分大小写的）</p>
-<p>一般命名规则：见名知意。推荐使用下划线方式。</p>
-<p> 标识符的字符：</p>
-<p>​    原则上可以使用任意字符，数字，符号，甚至是中文。但是一些特殊的组合，例如纯数字组合，特殊符号，包括mysql是内部关键字 应该使用标识符 限定符来包裹。防止冲突。</p>
-<p>限定符：反引号。比如：Createdatabase <code>1234</code></p>
-<p>Create database <code>Create</code></p>
-<p> <img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image001.jpg" alt="说明: 计算机生成了可选文字: C广e日ted日t日b日Se1234、3特殊字符串C广e日ted日t日b日SeC广eate关键字』尸口口口口口口口口口口口口口口口口"></p>
-<p>中文可以：但是要求客户端编码</p>
-<p>在mysql的数据目录，形成一个目录，目录名是数据库名。</p>
-<p>如果是特殊字符，则使用编码的形式保存。（如左边那个图）</p>
-<p>目录内，存在一个文件，用于保存数据库的选项信息。Db.opt</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image001.jpg" alt="说明: 计算机生成了可选文字: 少户搜索文件夹团，国文件夹:＼物p\my，公＼data＼位4任0但667姻64a胆sbaZ阵夹任务‘个新交件夹刊圃缈"></p>
-<p>–&gt;ק�`���</p>
-<p><strong>数据查询</strong></p>
-<p><strong>查看当前存在的数据库：（除了自己创建的数据库，系统自己也有的</strong>）</p>
-<p>Showdatabases;</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image001.png" alt="计算机生成了可选文字:mysql&gt;showdatabases•7Database1234fengmysqlSYSrOWS]nschema1schema1〔0．18sec)"></p>
-<p>数据库文件所在位置如下;</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image002.png" alt="计算机生成了可选文字:计巨机，迮心过〔0〕打开ProgramData卜MySQL新过文荚包含中·名称0方河的，OneDrive扌音乐计巨机本地磁證〔C:)本地磁證〔E:)上360DOWn《儲上performanceschemaauto.cnfFENG-PC.errfeng吒记FENG-PC-SIOWlogibbuffer_poolib」ogfileOib」。g蹦elibdatalibtmplMySQLServer50修改凸期2018/3/3011：172018/3/3011：172018/3/3011：172018/3/2923：202018/3/2923：202018/3/2923：202018/3/2923：202018/3/3011：222018/3/308：132018/3/2923：212018/3/292312018/3/308：142018/3/2923：202018/3/308：132018/3/308：13CNF仁ERRPID交本交栏1KB12KB1KB1KB1KB4乳152KB4乳152KB1《288KB1《288KB"></p>
-<p>注意: 并不是只有 用户可以创建数据库，mysql内部维护自己数据库。</p>
-<p><strong>查看数据的创建语句</strong>：</p>
-<p>Showcreate database db_name;</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image003.png" alt="说明: 计算机生成了可选文字: 夕sql&gt;sho讨c护eatedatabasetest:Database:CreateDataba公e:te,t:CRF自TFD自TnBnSFte公t／赞！4日1日日DFFnULTCHnRnCTFRgFTutFS补Z:护ouinset＜日一日日，ec)"></p>
-<p><strong>数据库删除：（不可逆的，所有要慎重</strong>）</p>
-<p>Drop database db_name;</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image004.jpg" alt="说明: 计算机生成了可选文字: 夕sql&gt;d护opuer夕0l(，日databasephp一。ne;ro&quot;5affected＜日。日5sec)夕忿矶工）"></p>
-<p><strong>修改数据库信息</strong></p>
-<p>alter database db_name [修改指令]</p>
-<p>指令：数据库属性的修改</p>
-<p>比如: alter database php_1 character set gbk;</p>
-<p><img src="file:///C:/Users/feng/AppData/Local/Temp/msohtmlclip1/02/clip_image005.png" alt="说明: 计算机生成了可选文字: 刁jJJJ、夕sql&gt;Uer夕alterdatabasephp一1charactersetgbk;0I(,1r0Uaffected＜日。日日sec&gt;,sql&gt;shoucreatedatabasephpJ;于一一一一－-－一一一备－一一------－一闷卜1Database1CreateDatabase＋一一一一一一一一一一吞－－一一一一一一一一一一一一一一1phpJ:CREnTED自T自B自SE&#39;php一1&#39;／赞？4日1日日DFF自ULT.-－一廿CH自RnCTFRSFTgbk赞Z}于一一一一一一一一一一于一一一一一一一一一一一一一一一一一一一一一一一－一一个日日，e"></p>
-<p>修改名字：</p>
-<p>(1)、简单的可以直接修改目录名。（但是不通用  有时候不行，数据并非只存在一个数据库中）</p>
-<p>(2)、将数据库内容全部导出，新建一个数据库，将内容导入，删除旧数据库。</p>
-<p>(3)、创建一个新数据库，将旧数据库内的表，都移动（重命名）到新数据库内，删除旧数据库。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/30/入门SQL之库操作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-你好-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -558,10 +446,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
