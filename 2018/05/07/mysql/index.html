@@ -8,19 +8,25 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>mysql | Yfliu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、创建数据库：Create database db_name [数据库选项，即名称];(每当创建一个数据库，就在mysql–&amp;gt;date文件里创建一个文件) 注意：每条语句 要求使用语句结束符 ; 来结束">
+  <meta name="description" content="​        MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。本人将详细讲解入门数据库">
 <meta name="keywords" content="Java,后台">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql">
 <meta property="og:url" content="http://yoursite.com/2018/05/07/mysql/index.html">
 <meta property="og:site_name" content="Yfliu的博客">
-<meta property="og:description" content="1、创建数据库：Create database db_name [数据库选项，即名称];(每当创建一个数据库，就在mysql–&amp;gt;date文件里创建一个文件) 注意：每条语句 要求使用语句结束符 ; 来结束">
+<meta property="og:description" content="​        MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。本人将详细讲解入门数据库">
 <meta property="og:locale" content="China">
 <meta property="og:image" content="http://yoursite.com/images/1.jpg">
-<meta property="og:updated_time" content="2018-05-21T09:46:33.469Z">
+<meta property="og:image" content="http://yoursite.com/images/2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/6.jpg">
+<meta property="og:image" content="http://yoursite.com/images/7.jpg">
+<meta property="og:updated_time" content="2018-05-23T08:08:52.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql">
-<meta name="twitter:description" content="1、创建数据库：Create database db_name [数据库选项，即名称];(每当创建一个数据库，就在mysql–&amp;gt;date文件里创建一个文件) 注意：每条语句 要求使用语句结束符 ; 来结束">
+<meta name="twitter:description" content="​        MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。本人将详细讲解入门数据库">
 <meta name="twitter:image" content="http://yoursite.com/images/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yfliu的博客" type="application/atom+xml">
@@ -88,7 +94,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/Yuanfengliu" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/3243707665/profile?topnav=1&wvr=6" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
@@ -131,7 +137,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/Yuanfengliu" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/3243707665/profile?topnav=1&wvr=6" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
@@ -181,37 +187,402 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、创建数据库：Create database db_name [数据库选项，即名称];(每当创建一个数据库，就在mysql–&gt;date文件里创建一个文件)</p>
-<p>注意：每条语句 要求使用语句结束符 ; 来结束</p>
+        <blockquote>
+<p>​        MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。本人将详细讲解入门数据库的增删改查等操作。</p>
+</blockquote>
 <a id="more"></a>
+<h2 id="1、USE-数据库名"><a href="#1、USE-数据库名" class="headerlink" title="1、USE 数据库名"></a>1、USE 数据库名</h2><p>选择要操作的Mysql数据库，使用该命令后所有Mysql命令都只针对该数据库</p>
+<p>mysql&gt;use XXX;</p>
+<h2 id="2、创建数据库："><a href="#2、创建数据库：" class="headerlink" title="2、创建数据库："></a>2、创建数据库：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Create database db_name [数据库选项，即名称];</span><br></pre></td></tr></table></figure>
+<p>(每当创建一个数据库，就在mysql–&gt;date文件里创建一个文件)</p>
+<p>注意：每条语句 要求使用语句结束符 ; 来结束</p>
 <p><img src="/images/1.jpg" alt=""></p>
-<p> 标识符（数据库名）命名规则：</p>
+<ul>
+<li><strong>标识符（数据库名）命名规则</strong>：</li>
+</ul>
 <p>​    大小写取决于当前操作系统。（一般认为是区分的，因为Linux是区分大小写的）</p>
 <p>一般命名规则：见名知意。推荐使用下划线方式。</p>
-<p> 标识符的字符：</p>
+<ul>
+<li><strong>标识符的字符</strong>：</li>
+</ul>
 <p>​    原则上可以使用任意字符，数字，符号，甚至是中文。但是一些特殊的组合，例如纯数字组合，特殊符号，包括mysql是内部关键字 应该使用标识符 限定符来包裹。防止冲突。</p>
-<p>限定符：反引号。比如：Createdatabase 1234</p>
-<p>Create database Create</p>
+<p>限定符：反引号。比如：Createdatabase 1234 ;  Create database Create;</p>
 <p>中文可以：但是要求客户端编码</p>
-<p>在mysql的数据目录，形成一个目录，目录名是数据库名。</p>
-<p>如果是特殊字符，则使用编码的形式保存。（如左边那个图）</p>
+<p>在mysql的数据目录，形成一个目录，目录名是数据库名。如果是特殊字符，则使用编码的形式保存。</p>
 <p>目录内，存在一个文件，用于保存数据库的选项信息。Db.opt</p>
-<p>数据查询</p>
-<p>查看当前存在的数据库：（除了自己创建的数据库，系统自己也有的）</p>
-<p>Showdatabases;</p>
-<p>数据库文件所在位置如下;</p>
+<h2 id="3、数据查询"><a href="#3、数据查询" class="headerlink" title="3、数据查询"></a>3、数据查询</h2><ul>
+<li><strong>查看当前存在的数据库</strong>：（除了自己创建的数据库，系统自己也有的）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Show databases;</span><br></pre></td></tr></table></figure>
 <p>注意: 并不是只有 用户可以创建数据库，mysql内部维护自己数据库。</p>
-<p> 查看数据的创建语句：</p>
-<p>Showcreate database db_name;</p>
-<p>数据库删除：（不可逆的，所有要慎重）</p>
-<p>Drop database db_name;<br>修改数据库信息</p>
-<p>alter database db_name [修改指令]</p>
+<ul>
+<li><strong>查看数据的创建语句：</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Show create database db_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>数据库删除</strong>：（不可逆的，所有要慎重）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Drop database db_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>修改数据库信息</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter database db_name [修改指令]</span><br></pre></td></tr></table></figure>
 <p>指令：数据库属性的修改</p>
-<p>比如: alter database php_1 character set gbk;</p>
-<p>修改名字：</p>
+<p>比如: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter database php_1 character set gbk;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2.jpg" alt=""></p>
+<ul>
+<li><strong>修改名字</strong>：</li>
+</ul>
 <p>(1)、简单的可以直接修改目录名。（但是不通用  有时候不行，数据并非只存在一个数据库中）</p>
 <p>(2)、将数据库内容全部导出，新建一个数据库，将内容导入，删除旧数据库。</p>
 <p>(3)、创建一个新数据库，将旧数据库内的表，都移动（重命名）到新数据库内，删除旧数据库。</p>
+<h2 id="4、表操作"><a href="#4、表操作" class="headerlink" title="4、表操作"></a>4、表操作</h2><ul>
+<li><strong>创建表</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Create table tbl_name (列结构)[表结构]</span><br></pre></td></tr></table></figure>
+<p>先分析，需要保存的实体数据，拥有哪些属性。这些属性应该如何保存。</p>
+<ul>
+<li><strong>使用某个表</strong></li>
+</ul>
+<p>进行表操作时，都会指定当前的默认数据库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Use db_name;//只是设定了默认数据库，不会影响操作其他数据库</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>查看表结构（描述表结构）：</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Describe tbl_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>删除表</strong>：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table [if exists] tbl_name;</span><br></pre></td></tr></table></figure>
+<p>注意：表不存在，会报错。</p>
+<ul>
+<li><strong>修改表</strong></li>
+</ul>
+<p>（1）修改表名.（支持修改多个表，只要在后面加上其他表即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rename table old_tbl_name to new_tbl_name;</span><br></pre></td></tr></table></figure>
+<p>（2）修改列定义</p>
+<p>修改表结构，上面的是子命令，上级是， alter table tbl_name [add|drop|change|modify]</p>
+<p>（alter的英语意思：改变；修改）</p>
+<p>（3）修改表选项</p>
+<p> Alter table tbl_name 新的表选项</p>
+<h2 id="5、数据操作"><a href="#5、数据操作" class="headerlink" title="5、数据操作"></a>5、数据操作</h2><table>
+<thead>
+<tr>
+<th>create，</th>
+<th>delete ,</th>
+<th style="text-align:center">read(retrieve),</th>
+<th>update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建数据（插入数据）create</td>
+<td>删除数据</td>
+<td style="text-align:center">获得数据（查询数据）</td>
+<td>修改数据</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>创建数据</strong></li>
+</ul>
+<p>insert into 表名 （字段列名）values(值列表)</p>
+<ul>
+<li><strong>获得数据</strong></li>
+</ul>
+<p>Select 字段列表 from 表名 查询条件。</p>
+<ul>
+<li><p><strong>删除数据</strong></p>
+<p>Delete from 表名 条件。</p>
+<p>删除 需要在逻辑上严格给条件，否则容易造成数据误操作。导致损失。语法上可以没有where。逻辑上要有。</p>
+<p>如果需要删除所有数据，使用where 1</p>
+</li>
+<li><p><strong>修改数据</strong></p>
+</li>
+</ul>
+<p>Update 表名 set 字段=新值, … 条件</p>
+<h2 id="6、字符集"><a href="#6、字符集" class="headerlink" title="6、字符集"></a>6、字符集</h2><p>字符的集合，展示</p>
+<p>字符的编码，保存和处理</p>
+<p>ysql支持的常见字符集：</p>
+<p>通过命令：Showcharacter set   。可以看到支持了好多！！（如下图所示）</p>
+<p><img src="/images/3.jpg" alt=""></p>
+<p>字符集决定的是 ：  字段的数据，是何种形式保存的。如果通过客户端操作服务器，那么客户端与服务器之间进行数据通信，要保证编码一致。可以将互相发送的数据，转换成 目标可以接收的编码。</p>
+<ul>
+<li><strong>设置变量</strong>：</li>
+</ul>
+<p>Set 变量名=值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set character_set_client= gbk;</span><br></pre></td></tr></table></figure>
+<p>告知服务器，客户端发送的数据是gbk编码。执行后，没有返回数据的语句没有问题了。</p>
+<p> 如果需要从服务器返回数据，还需要设置服务器发送给客户端的编码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Setcharacter_set_results = gbk;</span><br></pre></td></tr></table></figure>
+<p>服务器在发送数据时，才能转成客户端认识的编码。统一的操作可以用 set names gbk可以完成。（简单项目通用的做法）</p>
+<p>其实还有一个有影响：连接层编码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set character_set_connection = gbk;</span><br></pre></td></tr></table></figure>
+<p> Set names  可以设置上面的三个。</p>
+<p> 典型的情况，set names即可。如果情况复杂，需要分开设置</p>
+<p><img src="/images/4.jpg" alt=""></p>
+<h2 id="7、整形"><a href="#7、整形" class="headerlink" title="7、整形"></a>7、整形</h2><p><img src="/images/5.jpg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">字节</th>
+<th style="text-align:center">最小值（有符号/无符号）</th>
+<th style="text-align:center">最大值（有符号/无符号）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TINYINT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">-128/0</td>
+<td style="text-align:center">127/255</td>
+</tr>
+<tr>
+<td style="text-align:center">SMALLINT</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-32768/0</td>
+<td style="text-align:center">32767/65535</td>
+</tr>
+<tr>
+<td style="text-align:center">MEDIUMINT</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">-8388608/0</td>
+<td style="text-align:center">8388607/16777215</td>
+</tr>
+<tr>
+<td style="text-align:center">INT/INTEGE</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">-2147483648/0</td>
+<td style="text-align:center">2147483647  /4294967295</td>
+</tr>
+<tr>
+<td style="text-align:center">BIGINT</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">-9223372036854775808/0</td>
+<td style="text-align:center">9223372036854775807/18446744073709551615</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>可使用unsigned控制是否有正负</li>
+<li>可以使用zerofill来进行前导零填充</li>
+<li>也存在 布尔bool类型，但是就是tinyint(1)的别名</li>
+</ul>
+<h2 id="8、小数"><a href="#8、小数" class="headerlink" title="8、小数"></a>8、小数</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:center">存储空间（字节）</th>
+<th style="text-align:center">最小值（理论）</th>
+<th style="text-align:center">最大值（理论）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FLOAT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">-3.402823466E+38</td>
+<td style="text-align:center">3.402823466E+38</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">-1.7976931348623157E+308</td>
+<td style="text-align:center">1.7976931348623157E+308</td>
+</tr>
+<tr>
+<td>DECIMAL</td>
+<td style="text-align:center">变长，大致是每9个数字，采用4个字节存储。整数和分数分开计算</td>
+<td style="text-align:center">M，最大是65  D，最大是30  默认是10，2 -（65个9）</td>
+<td style="text-align:center">（+65个9）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="（1）浮点：小数位数可以变化。"><a href="#（1）浮点：小数位数可以变化。" class="headerlink" title="（1）浮点：小数位数可以变化。"></a>（1）浮点：小数位数可以变化。</h3><p><strong>浮点型数据</strong>：（小数位可以变化）</p>
+<ul>
+<li>float单精度：默认精度位数为 6位左右</li>
+<li>double双精度：默认为16左右</li>
+</ul>
+<p>支持，控制数值的范围。</p>
+<p>​        Type(M,D)</p>
+<p>M表示所有的数值位数（不包括小数点，和符号。但包括小数的）</p>
+<p>D,表示允许的小数位数。</p>
+<h3 id="（2）定点数"><a href="#（2）定点数" class="headerlink" title="（2）定点数"></a>（2）定点数</h3><p>decimal（M,D)</p>
+<p>M总位数</p>
+<p>D小数位数。（范围存在）</p>
+<p>M默认为10，D默认为0；</p>
+<h2 id="9、日期时间"><a href="#9、日期时间" class="headerlink" title="9、日期时间"></a>9、日期时间</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">显示格式</th>
+<th style="text-align:center">取值</th>
+<th style="text-align:center">存储空间</th>
+<th style="text-align:center">零值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DATETIME</td>
+<td style="text-align:center">YYYY-MM-DD HH:MM:SS</td>
+<td style="text-align:center">‘1000-01-01 00:00:00’到’9999-12-31  23:59:59’</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">0000-00-00 00:00:00</td>
+</tr>
+<tr>
+<td style="text-align:center">TIMESTAMP</td>
+<td style="text-align:center">YYYY-MM-DD HH:MM:SS</td>
+<td style="text-align:center">是‘1970-01-01 00:00:00’到2038-01-19 03:14:07</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">0000-00-00 00:00:00</td>
+</tr>
+<tr>
+<td style="text-align:center">DATE</td>
+<td style="text-align:center">YYYY-MM-DD</td>
+<td style="text-align:center">‘1000-01-01’到’9999-12-31</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0000-00-00</td>
+</tr>
+<tr>
+<td style="text-align:center">TIME</td>
+<td style="text-align:center">HH:MM:SS</td>
+<td style="text-align:center">-838:59:59’到’838:59:59’</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">00:00:00</td>
+</tr>
+<tr>
+<td style="text-align:center">YEAR</td>
+<td style="text-align:center">YYYY</td>
+<td style="text-align:center">1901到2155</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>年月日时分秒（Datetime类型）</li>
+</ul>
+<ul>
+<li><p>时间戳（Timestamp类型）</p>
+<p>存储时，整型，</p>
+<p>但是表示时，日期时间。    </p>
+<p>0 -21多亿</p>
+<p>范围：   1970.1.1 0:0:0       到           2038-01-19 03:14:07UTC</p>
+</li>
+</ul>
+<ul>
+<li><p>年月日（Date类型）</p>
+<p>特点：支持 任意分隔符的日期：（如下图所示：会对当前的时间的合理范围进行判断，不需要时间分隔符。如超出正常时间范围会出现错误提示）</p>
+</li>
+</ul>
+<ul>
+<li><p>Time类型</p>
+<p>​        TIME特点：TIME类型不仅可以用于表示一天的时间，还可以表示一个间隔时间（或者过去了多久）</p>
+<p>因此该类型可以设置为多个小时，甚至是 几天几小时几分钟几秒的情况 D HH:II:SS。</p>
+<p>同样在设置时分秒时，可以使用其他标点符号作为分隔符，甚至是不用（用天了就不行了）。</p>
+<p>​    表示意义：</p>
+<p>1、一天中的时间</p>
+<p>2、表示时间间隔，在表示间隔时，可以使用天来表示。格式：</p>
+<p>D HH:MM:SS</p>
+<p>D代表的是天数。例如：（如下面2中（之前设置了是time类型的）：有时间间隔符的和没有时间间隔符的）</p>
+</li>
+</ul>
+<ul>
+<li><p>Year类型</p>
+<p>此时日期的范围，就不是1000-9999，而是 1901-2155 一个字节表示。首先要设置表格属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create tabley_1（&apos;begin&apos; year）;</span><br></pre></td></tr></table></figure>
+<p>​       如果做一个php项目，通常，保存时间都是  时间戳（ timestamp），是unix时间戳，直接以整型的形式保存在数据库内，不是mysql提供 timestamp类型。</p>
+<h2 id="10、字符串类型"><a href="#10、字符串类型" class="headerlink" title="10、字符串类型"></a>10、字符串类型</h2></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">最大长度</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">255</td>
+<td style="text-align:center">Char(M),M字符数</td>
+</tr>
+<tr>
+<td style="text-align:center">varchar</td>
+<td style="text-align:center">65535，但需要1-2个保存信息，同时由于记录的限制，因此最大为65532</td>
+<td style="text-align:center">编码不同字符数不同：  Gbk&lt;=32767  Utf8&lt;=21845</td>
+</tr>
+<tr>
+<td style="text-align:center">tinyText，text，mediumText，longtext</td>
+<td style="text-align:center">L + n。L为最大长度  2^8+1, 2^16+2, 2^24+3, 2^32+4</td>
+<td style="text-align:center">定义时，通常不用指定长度，可以自己计算。</td>
+</tr>
+<tr>
+<td style="text-align:center">enum</td>
+<td style="text-align:center">1、2。枚举选项量（65535）</td>
+<td style="text-align:center">内部存储是整型表示。  字段值只能是某一个</td>
+</tr>
+<tr>
+<td style="text-align:center">Set</td>
+<td style="text-align:center">1、2、3、4、8。元素数量：64</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Binary,varbinary,blob</td>
+<td style="text-align:center">Binary(char),varbinary(varchar),blob(text) 做类比</td>
+<td style="text-align:center">二进制数据（字节而非字符）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Char和Varchar类型</p>
+<p>Char(M) 固定长度。   其中，M表示：允许的字符串长度。char内M表示严格限定的长度。</p>
+<p>Varchar(M) 可变长度。    其中，M在varchar中的表示：是允许的最大长度。</p>
+</li>
+</ul>
+<ul>
+<li><p>Text</p>
+<p>最大长度：2^16+2（需要额外2个字节存储记录长度）</p>
+<p>特点：定义时，通常不用指定长度，可以自己计算。文本，有很多 兄弟类型。Tinytext   longtext 等等（具体看最上方的表格）。表示的字符串长度不一样。</p>
+</li>
+</ul>
+<ul>
+<li><p>枚举</p>
+<p>Enum    枚举选项量（65535）</p>
+<p>特点：看上去是一个字符串，其实，内部存储是整型表示。字段值只能是某一个</p>
+</li>
+</ul>
+<ul>
+<li><p>set类型</p>
+<p> 特点：8个字节，所以总共64位，即总共表示64个元素</p>
+<p> 集合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set(‘value1’,’value2’,…);</span><br></pre></td></tr></table></figure>
+<p>表示可以选择可用值的0个或多个组合</p>
+</li>
+</ul>
+<ul>
+<li><p>Binary类型</p>
+<p>二进制类型：（特点：二进制数据（字节而非字符））</p>
+<p>如果需要保存一个二进制文件内容的话，应该保存成这些类型。</p>
+</li>
+</ul>
+<h2 id="11、列属性"><a href="#11、列属性" class="headerlink" title="11、列属性"></a>11、列属性</h2><ul>
+<li><strong>如何选择：（参考原因）</strong></li>
+</ul>
+<p><img src="/images/6.jpg" alt=""></p>
+<p><strong>参考原因</strong></p>
+<p>​    1，应该使用最精确的类型。占用的空间少。</p>
+<p>​    2，还应该考虑到相关应用语言的处理。例如常常将时间日期保存成一个整型。便于计算。</p>
+<p>​    3，考虑移植的兼容性。</p>
+<ul>
+<li>列属性，列约束</li>
+</ul>
+<p><img src="/images/7.jpg" alt=""></p>
+<p>​        约束，保证表的结构和数据的正确性和稳定性。</p>
+<p>​    总的来说有五种：唯一性和主键约束、外键约束、检查约束、空值约束、默认值约束，有五大关键词，UNIQUE和Primary Key, Foreign Key,CHECK, NOT NULL, DEFAULT 。</p>
 
       
 
