@@ -6,20 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>日常折腾日记 | Yfliu的博客</title>
+  <title>RSA公钥算法 | Yfliu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="俗话说，生活就是不断的折腾，恰好自己是个这样的人。可能就是这样一个虽然不是很年轻了，但是心态总是年轻的，看到一些有趣的或者有意思的，总是忍不住想看看，或者试试。但是有时候又觉得自己不再年轻了，有些东西虽然当时记着了，但是后来又忘了，或者有时候记着又找起来很耽误时间。所以就在这记录一下吧。">
-<meta name="keywords" content="博客,资源,收集">
+  <meta name="description" content="如果你问我，哪一种算法最重要？哪一种算法最常用？我可能会回答“公钥加密算法”。因为它是计算机通信安全的基石，保证了加密数据不会被破解和加强了身份验证。你可以想象一下，信用卡交易被破解的后果。 本篇文章将详细讲解公钥算法RSA，进入正题之前，我先简单介绍一下，什么是”公钥加密算法”。">
+<meta name="keywords" content="公钥,非对称，加密">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日常折腾日记">
-<meta property="og:url" content="http://yoursite.com/2018/04/25/daily_zheteng/index.html">
+<meta property="og:title" content="RSA公钥算法">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/RSA/index.html">
 <meta property="og:site_name" content="Yfliu的博客">
-<meta property="og:description" content="俗话说，生活就是不断的折腾，恰好自己是个这样的人。可能就是这样一个虽然不是很年轻了，但是心态总是年轻的，看到一些有趣的或者有意思的，总是忍不住想看看，或者试试。但是有时候又觉得自己不再年轻了，有些东西虽然当时记着了，但是后来又忘了，或者有时候记着又找起来很耽误时间。所以就在这记录一下吧。">
+<meta property="og:description" content="如果你问我，哪一种算法最重要？哪一种算法最常用？我可能会回答“公钥加密算法”。因为它是计算机通信安全的基石，保证了加密数据不会被破解和加强了身份验证。你可以想象一下，信用卡交易被破解的后果。 本篇文章将详细讲解公钥算法RSA，进入正题之前，我先简单介绍一下，什么是”公钥加密算法”。">
 <meta property="og:locale" content="China">
-<meta property="og:updated_time" content="2018-05-21T09:24:32.379Z">
+<meta property="og:image" content="http://yoursite.com/images/8.jpg">
+<meta property="og:image" content="http://yoursite.com/images/9.jpg">
+<meta property="og:image" content="http://yoursite.com/images/10.jpg">
+<meta property="og:image" content="http://yoursite.com/images/12.jpg">
+<meta property="og:image" content="http://yoursite.com/images/13.jpg">
+<meta property="og:image" content="http://yoursite.com/images/14.jpg">
+<meta property="og:image" content="http://yoursite.com/images/15.jpg">
+<meta property="og:image" content="http://yoursite.com/images/16.jpg">
+<meta property="og:image" content="http://yoursite.com/images/17.jpg">
+<meta property="og:image" content="http://yoursite.com/images/18.jpg">
+<meta property="og:image" content="http://yoursite.com/images/19.jpg">
+<meta property="og:updated_time" content="2018-05-24T09:59:18.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日常折腾日记">
-<meta name="twitter:description" content="俗话说，生活就是不断的折腾，恰好自己是个这样的人。可能就是这样一个虽然不是很年轻了，但是心态总是年轻的，看到一些有趣的或者有意思的，总是忍不住想看看，或者试试。但是有时候又觉得自己不再年轻了，有些东西虽然当时记着了，但是后来又忘了，或者有时候记着又找起来很耽误时间。所以就在这记录一下吧。">
+<meta name="twitter:title" content="RSA公钥算法">
+<meta name="twitter:description" content="如果你问我，哪一种算法最重要？哪一种算法最常用？我可能会回答“公钥加密算法”。因为它是计算机通信安全的基石，保证了加密数据不会被破解和加强了身份验证。你可以想象一下，信用卡交易被破解的后果。 本篇文章将详细讲解公钥算法RSA，进入正题之前，我先简单介绍一下，什么是”公钥加密算法”。">
+<meta name="twitter:image" content="http://yoursite.com/images/8.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yfliu的博客" type="application/atom+xml">
   
@@ -159,20 +171,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-daily_zheteng" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-RSA" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      日常折腾日记
+      RSA公钥算法
     </h1>
   
 
         
-        <a href="/2018/04/25/daily_zheteng/" class="archive-article-date">
-  	<time datetime="2018-04-25T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
+        <a href="/2018/05/24/RSA/" class="archive-article-date">
+  	<time datetime="2018-05-24T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
 </a>
         
       </header>
@@ -180,16 +192,195 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>俗话说，生活就是不断的折腾，恰好自己是个这样的人。可能就是这样一个虽然不是很年轻了，但是心态总是年轻的，看到一些有趣的或者有意思的，总是忍不住想看看，或者试试。但是有时候又觉得自己不再年轻了，有些东西虽然当时记着了，但是后来又忘了，或者有时候记着又找起来很耽误时间。所以就在这记录一下吧。</p>
+<p>如果你问我，哪一种算法最重要？哪一种算法最常用？我可能会回答<a href="http://zh.wikipedia.org/wiki/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6" target="_blank" rel="noopener">“公钥加密算法”</a>。因为它是计算机通信安全的基石，保证了加密数据不会被破解和加强了身份验证。你可以想象一下，信用卡交易被破解的后果。</p>
+<p>本篇文章将详细讲解公钥算法RSA，进入正题之前，我先简单介绍一下，什么是”公钥加密算法”。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="博客相关"><a href="#博客相关" class="headerlink" title="博客相关"></a>博客相关</h2><p><a href="https://zhuanlan.zhihu.com/p/28128674" target="_blank" rel="noopener">hexo博客插件</a><br><a href="http://www.yuguocong.me/10-%E5%B7%A5%E5%85%B7/%E6%88%91%E7%9A%84hexo%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">我的博客折腾</a><br><a href="http://yeziahehe.com/2015/12/13/use_Travis_CI_auto_build_Hexo_static_blog/" target="_blank" rel="noopener">自动构建博客</a></p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p><a href="http://www.yuguocong.me/26-%E5%B7%A5%E5%85%B7/use_of_jupyter/" target="_blank" rel="noopener">jupyter</a></p>
+<h2 id="一、公钥算法历史"><a href="#一、公钥算法历史" class="headerlink" title="一、公钥算法历史"></a>一、公钥算法历史</h2><p>1976年以前，所有的加密方法都是同一种模式：</p>
+<p>​    （1）甲方选择某一种加密规则，对信息进行加密；</p>
+<p>　　（2）乙方使用同一种规则，对信息进行解密。</p>
+<p>由于加密和解密使用同样规则（简称”密钥”），这被称为”<strong>对称加密算法</strong>“。</p>
+<p>​    这种加密模式有一个最大弱点：甲方必须把加密规则告诉乙方，否则无法解密。保存和传递密钥，就成了最头疼的问题。</p>
+<p>​    相继而来，伟大的人们想到了一种非对称密钥，这是密码学一次伟大的革命。1973年，在<a href="https://zh.wikipedia.org/w/index.php?title=%E8%8B%B1%E5%9B%BD%E6%94%BF%E5%BA%9C%E9%80%9A%E8%AE%AF%E6%80%BB%E9%83%A8&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">英国政府通讯总部</a>工作的数学家<a href="https://zh.wikipedia.org/w/index.php?title=%E5%85%8B%E5%88%A9%E7%A6%8F%E5%BE%B7%C2%B7%E6%9F%AF%E5%85%8B%E6%96%AF&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">克利福德</a><a href="https://zh.wikipedia.org/w/index.php?title=%E5%85%8B%E5%88%A9%E7%A6%8F%E5%BE%B7%C2%B7%E6%9F%AF%E5%85%8B%E6%96%AF&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">·</a><a href="https://zh.wikipedia.org/w/index.php?title=%E5%85%8B%E5%88%A9%E7%A6%8F%E5%BE%B7%C2%B7%E6%9F%AF%E5%85%8B%E6%96%AF&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">柯克斯</a>（Clifford Cocks）在一个内部文件中提出了一个相同的算法，但他的发现被列入机密，一直到1997年才被发表。1974年，瑞夫·墨克（Ralph C. Merkle）在个人网站中提出公钥密码学思想。<a href="http://www.merkle.com/1974/。之后在1976年。[惠特菲尔德](https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2)[·](https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2)[迪菲](https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2)（Whitfield" target="_blank" rel="noopener">http://www.merkle.com/1974/。之后在1976年。[惠特菲尔德](https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2)[·](https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2)[迪菲](https://zh.wikipedia.org/wiki/%E6%83%A0%E7%89%B9%E8%8F%B2%E7%88%BE%E5%BE%B7%C2%B7%E8%BF%AA%E8%8F%B2)（Whitfield</a> Diffie）与<a href="https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%81%C2%B7%E8%B5%AB%E7%88%BE%E6%9B%BC" target="_blank" rel="noopener">马丁</a><a href="https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%81%C2%B7%E8%B5%AB%E7%88%BE%E6%9B%BC" target="_blank" rel="noopener">·</a><a href="https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%81%C2%B7%E8%B5%AB%E7%88%BE%E6%9B%BC" target="_blank" rel="noopener">赫尔曼</a>（Martin Hellman）两位学者以<a href="https://zh.wikipedia.org/wiki/%E5%96%AE%E5%90%91%E5%87%BD%E6%95%B8" target="_blank" rel="noopener">单向函数</a>与<a href="https://zh.wikipedia.org/w/index.php?title=%E5%96%AE%E5%90%91%E6%9A%97%E9%96%80%E5%87%BD%E6%95%B8&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">单向暗门函数</a>为基础，为发讯与收讯的两方创建密钥。这种新的加密模式被称为”非对称加密算法”。</p>
+<p>​    （1）乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+<p>　　（2）甲方获取乙方的公钥，然后用它对信息加密。</p>
+<p>　　（3）乙方得到加密后的信息，用私钥解密。</p>
+<p>​    如果公钥加密的信息只有私钥解得开，那么只要私钥不泄漏，通信就是安全的。</p>
+<p>​    1977年，三位数学家Rivest、Shamir 和 Adleman 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做<a href="http://zh.wikipedia.org/zh-cn/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">RSA算法</a>。从那时直到现在，RSA算法一直是最广为使用的”非对称加密算法”。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。</p>
+<p>​    RSA是对对称密码的重要补充,一般用于<strong>消息认证</strong>和<strong>密钥分配</strong>。</p>
+<p>​    目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
 <ul>
-<li><a href="https://www.cnblogs.com/kevingrace/p/6496899.html" target="_blank" rel="noopener">tmux的使用</a></li>
-<li><a href="https://github.com/kxxoling/blog/blob/master/tool/tmux.md" target="_blank" rel="noopener">tmux的使用2</a></li>
+<li><p><strong>注意：</strong>关于公钥密码的几种误解  </p>
+<ul>
+<li><ul>
+<li>公钥密码比传统密码安全？</li>
 </ul>
-<h2 id="Sublime-Text"><a href="#Sublime-Text" class="headerlink" title="Sublime Text"></a>Sublime Text</h2><h2 id="娱乐"><a href="#娱乐" class="headerlink" title="娱乐"></a>娱乐</h2><p>vip视频：<br><a href="https://github.com/laidefa/Flask_Web_Vip：" target="_blank" rel="noopener">https://github.com/laidefa/Flask_Web_Vip：</a>  <a href="http://101.37.147.236:1518/" target="_blank" rel="noopener">http://101.37.147.236:1518/</a></p>
+<p>​        任何加密方案的安全性都依赖于密钥的长度和破解密码的计算工作。所以公钥加密不必常规加密更安全；用户只要保护他的私钥，接收的通信就是安全的。</p>
+<ul>
+<li>公钥密码是通用方法，所以传统密码已经过时？</li>
+</ul>
+<p>​        传统密码用来加密大批量数据，公钥密钥用来进行密钥分配。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、RSA算法的使用"><a href="#二、RSA算法的使用" class="headerlink" title="二、RSA算法的使用"></a>二、RSA算法的使用</h2><ul>
+<li>​    <strong>加密功能</strong></li>
+</ul>
+<p><img src="/images/8.jpg" alt=""></p>
+<p>​        发送方要加密明文M：（获得接收方的公钥 K ~U~ ={n,e} ）</p>
+<p>​        计算:<br>$$<br>Me=C mod n,    where   0≤m&lt;n<br>$$<br>​        接收方解密密文C：（ 使用自己的私钥 K~R~={n,d} ）</p>
+<p>​        计算:<br>$$<br>Cd =M mod N<br>$$</p>
+<ul>
+<li>​    <strong>数字签名</strong></li>
+</ul>
+<p><img src="/images/9.jpg" alt=""></p>
+<p>​        验证A的身份：<strong>私钥加密，公钥解密</strong></p>
+<h2 id="三、RSA算法的原理"><a href="#三、RSA算法的原理" class="headerlink" title="三、RSA算法的原理"></a>三、RSA算法的原理</h2><h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><p>​    a)发送者产生两个不相等的质数P和q (保密)</p>
+<p>​    b)计算 n=P*q (公开)，欧拉函数 φ(n) =(p-1)(q-1)(保密)</p>
+<p>​    c)随机选择一个整数e，条件是1&lt;e &lt; φ(n)，且e与φ(n)互质</p>
+<p>​    d)计算e对于φ(n)的模反元素d，即ed ≡ 1(mod φ(n))，整数d就是私钥。</p>
+<p>​    e)将n和e封装成公钥(n,e)，n和d封装成私钥(n,d)；并保存</p>
+<h4 id="涉及的相关数学知识"><a href="#涉及的相关数学知识" class="headerlink" title="涉及的相关数学知识"></a>涉及的相关数学知识</h4><p>​    <strong>1、质数</strong></p>
+<pre><code>质数又称素数，有无限个 
+</code></pre><p>​        定义：在大于1的自然数中，除了1和它本身以外不再有其他因数。</p>
+<p>​    <strong>2、欧拉函数</strong></p>
+<p>​    若计算：任意给定正整数n，请问在小于等于n的正整数之中，有多少个与n构成互质关系？（比如，在1到8之中，有多少个数与8构成互质关系？）</p>
+<p>​      计算这个值的方法就叫做欧拉函数，以φ(n)表示。在1到8之中，与8形成互质关系的是1、3、5、7，所以 φ(n) = 4。</p>
+<p>​    欧拉函数的通用公式如下：</p>
+<p>​<br>$$<br>p(n)=n(1-1/P1)(1-1/P2)(1-1/P3)……(1-1/Pr)<br>$$<br>​    其中n可以看成一系列质数的积:    n=P~1~^k1^P~2~^k2^…P~r~^kr^</p>
+<p>​    <strong>3、欧拉定理</strong></p>
+<p>​      欧拉函数的用处，在于欧拉定理。“欧拉定理”指：如果两个正整数a和n互质，则n的欧拉函数φ(n) 可以让下面的等式成立:</p>
+<p><img src="/images/10.jpg" alt=""></p>
+<p>​    也就是说，a的φ(n)次方被n除的余数为1。或者说：a的φ(n)次方减去1，可以被n整除。</p>
+<p>​    <strong>4、模反元素</strong></p>
+<pre><code>如果两个正整数e和n互质，那么一定可以找到整数d，使得 de-1 被n整除，或者说de被n除的余数是1。
+</code></pre><p>$$<br>de≡1(mod n)<br>$$<br>​    这时，d就叫做e的”模反元素”。</p>
+<h4 id="RSA算法素数生成器"><a href="#RSA算法素数生成器" class="headerlink" title="RSA算法素数生成器"></a>RSA算法素数生成器</h4><ul>
+<li>​    <strong>2个关键点：</strong></li>
+</ul>
+<p>​    （1）素性测试；保证正确性和高效性</p>
+<p>​    （2）随机数的生成：一定要保证安全性，即生成一个真随机数。会对随机源进行删选，选出符合条件的512位大素数。程序如下：</p>
+<pre><code>/** RSA算法要求有一个可信任的随机数源 */
+SecureRandom sr = new SecureRandom();
+/** 为RSA算法创建一个KeyPairGenerator对象 */
+KeyPairGenerator kpg = KeyPairGenerator.getInstance(ALGORITHM);
+/** 利用上面的随机数据源初始化这个KeyPairGenerator对象 */
+kpg.initialize(KEYSIZE, sr);
+/** 生成密匙对 */
+KeyPair kp = kpg.generateKeyPair();
+/** 得到公钥 */
+Key publicKey = kp.getPublic();
+/** 得到私钥 */
+Key privateKey = kp.getPrivate();
+/** 用字符串将生成的密钥写入文件 */
+</code></pre><p>​    JAVA本身自带素数生成器，由2个512位的数据源里随机生成，再对生成的数，判定是否是素数。判定的基本原则是：<strong>费马定理</strong>。 </p>
+<p>​    <strong>注意</strong>： 这个值不是绝对的，跟素数的生成算法有关系，只是告诉素数生成器“帮我生成一个接近1024位的素数而已”，然后生成器：“好，给您一个，这个差不多1024位”。由于2个512位相乘，可能会少于1到2位。</p>
+<ul>
+<li><p>​    <strong>费马小定理：</strong></p>
+<p>​    假如a是一个整数，p是一个质数，那么a^p^−a是p的倍数，可以表示为a^p^≡a(mod p)<br>​     如果a不是p的倍数，这个定理也可以写成a^p^−1≡1(mod p)。</p>
+<p>​    费马小定理是判定一个数是否为素数的必要条件，并非充分条件，因为存在着一些伪素数满足费马小定理却不是素数，如:</p>
+<p>​    2^340^≡1(mod 341)， 但是341=11×31</p>
+<p><strong>Fermat素性测试</strong>:   </p>
+<p>​    随机选择若干个小于待测数的正整数作为底数a进行若干次测试，只要有一次没有通过测试就可以判定这个数为合数。</p>
+<p><strong>Miller-Rabin素性测试</strong></p>
+<p>​    相当于Fermat素性测试二次探测定理</p>
+<p><strong>AKS素数测试:</strong></p>
+<p>​    （又被称为Agrawal–Kayal–Saxena素数测试和Cyclotomic AKS test）是一个决定型素数测试算法，</p>
+</li>
+</ul>
+<p>​      </p>
+<ul>
+<li><strong>Java中的java.math.BigInteger已经内置了Miller-Rabin素性测试函数。程序函数如下：</strong> </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public boolean is Probable Prime(int certainty)</span><br></pre></td></tr></table></figure>
+<p>​    注意certainty这个参数表示调用者能容忍的不确定性，如果该函数返回True，那么表示这个数是素数的概率是1−1/2^certainty^，certainty参数越大，该数是素数的可能性越大，相应的执行时间越长 。</p>
+<p><strong>生成一个n位十进制大素数的步骤如下:</strong> </p>
+<p>​    ①产生一个n位的随机数p，且最高位不能为0</p>
+<p>​    ②若最低位为偶数，则将它加1，保证该数为奇数以节省时间</p>
+<p>​    ③测试该数能否被10000以下的素数（共1228个）整除，这样可以快速排除许多合数，节省时间</p>
+<p>​    ④在2到p-1这间随机生成一个数a，以a为底对p进行Miller-Rabin素性测试，若不通过说明p为合数。若通过    则再选取一个a对p进行测试。选取a时应该选取尽可能小的素数，以提高运算速度。大概进行5次Miller-Rabin素性测试后，精确性就比较高了</p>
+<p>​    ⑤若p每次测试都通过，则认为p是素数。否则p←p+2，再次对p进行测试</p>
+<p>​    Java中的程序如下：</p>
+<p><img src="/images/12.jpg" alt=""></p>
+<p><strong>几点需要理解的点：</strong></p>
+<p>（1）公钥指数e如何确定？</p>
+<p>​    答：  公钥指数是随意选的，但目前行业上公钥指数普遍选的都是65537（0x10001，5bits）。这是PKCS#1的一个建议值而已，综合了安全性和运算速率的结果。也可以选择大一点，由前面运算可知，e越小，d就越大，解密就越慢。</p>
+<p>（2）私钥指数d如何确定？</p>
+<p>​    答：  根据算法公式（ed%φ(n)=1，φ(n)=(p-1)(q-1)）进行运算出来私钥d。根据ed关系，私钥d=(x*φ(n)+1)/e，可知：私钥指数似乎也不是唯一结果，可能大于也可能小于1024bits的，但习惯上也是指某个小于1024bits的大整数。  在实际运算和存储时为方便一般都是按照标准位长进行使用，前面不足部分补0填充。</p>
+<h2 id="四、RSA-的安全性"><a href="#四、RSA-的安全性" class="headerlink" title="四、RSA 的安全性"></a>四、RSA 的安全性</h2><ul>
+<li><p><strong>三种攻击 RSA的方法:</strong></p>
+<p>（1）强力穷举密钥:尝试所有可能的密钥。因此，e 和d 的位数越大，算法就越安全。</p>
+<p>（2）时间攻击：依赖解密算法的运行时间</p>
+<p>（3）数学攻击 ：实质上是对两个素数乘积的分解.</p>
+<p>​             RSA的安全性是基于大整数素因子分解的困难性，至今没有有效的方法予以解决，因此可以确保RSA算法的安全性。</p>
+</li>
+</ul>
+<h5 id="假设："><a href="#假设：" class="headerlink" title="假设："></a>假设：</h5><p>​    已知：公钥（n,e）;私钥（n,d）那么，有无可能在已知n和e的情况下，推导出d？</p>
+<p>​    分析：</p>
+<p>​              （1）ed≡1(mod φ(n))。只有知道e和φ(n)，才能算出d。</p>
+<p>​              （2）φ(n)=(p-1)(q-1)。只有知道p和q，才能算出φ(n)。</p>
+<p>​              （3）n=pq。只有将n因数分解，才能算出p和q。</p>
+<p>​    结论：如果n可以被因数分解，d就可以算出，也就意味着私钥被破解</p>
+<p>​    可是，大整数的因数分解，是一件非常困难的事情。目前，除了暴力破解，还没有发现别的有效方法。维基百科这样写道：</p>
+<blockquote>
+<p>​    对极大整数做因数分解的难度决定了RSA算法的可靠性。换言之，对一极大整数做因数分解愈困难，RSA算法愈可靠。</p>
+<p>　　假如有人找到一种快速因数分解的算法，那么RSA的可靠性就会极度下降。但找到这样的算法的可能性是非常小的。今天只有短的RSA密钥才可能被暴力破解。到2008年为止，世界上还没有任何可靠的攻击RSA算法的方式。只要密钥长度足够长，用RSA加密的信息实际上是不能被解破的。”</p>
+</blockquote>
+<p>​    举例来说，你可以对3233进行因数分解（61×53），但是你没法对下面这个整数进行因数分解。</p>
+<blockquote>
+<p>​    12301866845301177551304949<br>　　58384962720772853569595334<br>　　79219732245215172640050726<br>　　36575187452021997864693899<br>　　56474942774063845925192557<br>　　32630345373154826850791702<br>　　61221429134616704292143116<br>　　02221240479274737794080665<br>　　351419597459856902143413</p>
+</blockquote>
+<p>​    它等于这样两个质数的乘积:</p>
+<blockquote>
+<p>​    33478071698956898786044169<br>　　84821269081770479498371376<br>　　85689124313889828837938780<br>　　02287614711652531743087737<br>　　814467999489<br>　　　　×<br>　　36746043666799590428244633<br>　　79962795263227915816434308<br>　　76426760322838157396665112<br>　　79233373417143396810270092<br>　　798736308917</p>
+</blockquote>
+<p>​      2009年12月12日，编号为RSA-768（768 bits, 232 digits）数也被成功分解。事实上这大概是人类已经分解的最大整数（232个十进制位，768个二进制位）。比它更大的因数分解，还没有被报道过，因此目前被破解的最长RSA密钥就是768位.</p>
+<ul>
+<li><p><strong>公钥的信任</strong></p>
+<p>我们发现，要是连公钥你都被窃取了，还信任消息的来源吗？</p>
+</li>
+</ul>
+<p><img src="/images/13.jpg" alt=""></p>
+<p>​    就比如上图中，公钥别截获了，如何保证信息源呢？？？</p>
+<p>​    这就需要一个可信的大三方机构：CA, （Certificate Authority）：认证授权机构</p>
+<p><img src="/images/14.jpg" alt=""></p>
+<pre><code>监测终端要想通过数字证书向其他人传达信任。首先，它需要向CA服务器登记以获取它的身份证书。
+</code></pre><p>​    在认证机构的严格层次中，每个实体都必须拥有根CA的公钥，该公钥的安装是在这个模型中为随后进行的所有通信进行数字证书处理的基础。因此，它必须通过一种安全的带外方式来完成。在一个多层的严格层次结构中，终端实体直接被其上层的CA认证（也就是颁发证书），但是它们根是另一个不同的CA（根CA）。注意的是：认证是CA颁发数字证书的过程，CA是整个PKI系统中最基础的可信者，并负责验证用户身份、颁发证书、吊销证书和发布CRL(证书吊销列表)。x.509标准的认证证书的图如下：</p>
+<p><img src="/images/15.jpg" alt=""></p>
+<h2 id="五、实验"><a href="#五、实验" class="headerlink" title="五、实验"></a>五、实验</h2><p><strong>每次加密结果一样吗？</strong></p>
+<p><img src="/images/16.jpg" alt=""></p>
+<p><img src="/images/17.jpg" alt=""></p>
+<p>从上面的2个图中可以看出，同样的环境下，加密结果竟然不一样。这是因为系统执行了<strong>数据填充</strong>的操作。</p>
+<p>  Java 默认的RSA 实现是“RSA/None/PKCS1Padding”。比如下列程序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"></span><br><span class="line">- 使用指定的公钥加密数据。</span><br><span class="line">  *</span><br><span class="line">- @param publicKey 给定的公钥。</span><br><span class="line">- @param data      要加密的数据。</span><br><span class="line">- @return 加密后的数据。</span><br><span class="line">  */</span><br><span class="line"></span><br><span class="line">public static byte[] encrypt(PublicKey publicKey, byte[] data) throws Exception &#123;</span><br><span class="line">	Cipher ci = Cipher.getInstance(ALGORITHOM);</span><br><span class="line">	ci.init(Cipher.ENCRYPT_MODE, publicKey);</span><br><span class="line">	return ci.doFinal(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Java的填充方式</strong>：</p>
+<pre><code>PKCS #1 v1.5指定的填充方式。如何填充：
+</code></pre><p>  “ [RFC2313] PKCS #1: RSA EncryptionVersion 1.5 ”的 “ 8.1 Encryption-block formatting ” 节提供了详细的说明，部分原文如下：</p>
+<blockquote>
+<p>8.1 Encryption-block formatting   A block type BT, a padding string PS, and the data D shall be   formatted into an octet string EB, the encryption block.              </p>
+<p>​                        EB = 00 || BT || PS || 00 || D .        (1)</p>
+<p>​     The block type BT shall be a single octet indicating the structure of   the encryption block. For this version of the document it shall have   value 00, 01, or 02. For a private- key operation, the block type   shall be 00 or 01. For a public-key operation, it shall be 02.   </p>
+<p>​    The padding string PS shall consist of k-3-||D|| octets. For block   type 00, the octets shall have value 00; for block type 01, they   shall have value FF; and for block type 02, they shall be  pseudorandomly generated and nonzero. This makes the length of the   encryption block EB equal to k.</p>
+</blockquote>
+<p>​    <strong>PKCS #1 v1.5规定的填充格式为：</strong><br>$$<br>EB = 00 || BT || PS || 00 || D<br>$$<br>​    “填充后数据” =”00” + “数据块类型” + “填充字符串” + “00” + “原始数据”</p>
+<p>​    <strong>其中</strong>：</p>
+<p>​        D:data （指待处理数据，即填充前的原始数据）</p>
+<p>​        PS:padding string （填充字符串）</p>
+<p>​        BT:block type （数据块类型）</p>
+<p>​        EB:encryption block （待加密的数据块，经过填充后结果）</p>
+<p>​        ||:表示连接操作（X||Y表示将X和Y的内容连接到一起）</p>
+<p>“<strong>填充块类型</strong>”BT决定了紧挨着的”填充字符串”PS的内容。 BT的可能取值包括00,01和02：</p>
+<p>​    • 针对私钥处理的数据，BT取值为00或01; </p>
+<p>​    • BT取值为00时，PS为全00的字符串</p>
+<p>​    • BT取值为01时，PS为全FF的字符串，通过填充得到的整数会足够大，可以阻止某些攻击，因此也是推荐的<strong>填充方式</strong></p>
+<p>​    • 针对公钥处理的数据，BT取值为02； </p>
+<p>​    • 使用伪随机的16进制字符串填充PS，而且每次操作进行填充的伪随机书都是独立的</p>
+<p><strong>所以说，加密结果会不一样，因为填充的字符串将会不同。</strong></p>
+<h2 id="六、结果测试"><a href="#六、结果测试" class="headerlink" title="六、结果测试"></a><strong>六、结果测试</strong></h2><p><img src="/images/18.jpg" alt=""></p>
+<p><img src="/images/19.jpg" alt=""></p>
+<p>皮一下：从最终结果可以看出，RSA so easy！结果就完全印证了以上挂你单了吧！！！</p>
+<p>（完）</p>
 
       
 
@@ -224,15 +415,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">公钥</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">资源</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">收集</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">非对称，加密</a>
         		</li>
       		
 		</ul>
@@ -299,7 +486,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/25/daily_zheteng/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/24/RSA/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -313,18 +500,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/07/mysql/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          mysql
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/29/你好-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">你好,hexo</div>
+    <a href="/2018/05/07/mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql</div>
       <i class="icon-circle-right"></i>
     </a>
   
