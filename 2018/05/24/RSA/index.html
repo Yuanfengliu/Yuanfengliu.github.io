@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://yoursite.com/images/17.jpg">
 <meta property="og:image" content="http://yoursite.com/images/18.jpg">
 <meta property="og:image" content="http://yoursite.com/images/19.jpg">
-<meta property="og:updated_time" content="2018-06-01T08:07:53.113Z">
+<meta property="og:updated_time" content="2018-06-03T02:00:14.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA公钥算法">
 <meta name="twitter:description" content="如果你问我，哪一种算法最重要？哪一种算法最常用？我可能会回答“公钥加密算法”。因为它是计算机通信安全的基石，保证了加密数据不会被破解和加强了身份验证。你可以想象一下，信用卡交易被破解的后果。 　　本篇文章将详细讲解公钥算法RSA，进入正题之前，我先简单介绍一下，什么是”公钥加密算法”。">
@@ -227,22 +227,26 @@
 </ul>
 <h2 id="二、RSA算法的使用"><a href="#二、RSA算法的使用" class="headerlink" title="二、RSA算法的使用"></a>二、RSA算法的使用</h2><ul>
 <li><p>​    <strong>加密功能</strong></p>
-<div align="center">
+<center>
 
-</div></li>
+</center></li>
 </ul>
 <p><img src="/images/8.jpg" alt="加密传输过程"></p>
-<p> </p>
+<center>
+
 <p>　　发送方要加密明文M：（获得接收方的公钥 K ~U~ ={n,e} ）</p>
 <p>　　计算: </p>
-<p>​                                M^e^=C mod n,    where   0≤m&lt;n</p>
+<p>​                                <center>M^e^=C mod n,    where   0≤m&lt; n <center></center></center></p>
 <p>　　接收方解密密文C：（ 使用自己的私钥 K~R~={n,d} ）</p>
 <p>　　计算: </p>
-<p>​                                C^d^ =M mod N</p>
+<p>​                            <center>C^d^ =M mod N <center></center></center></p>
 <ul>
 <li>​    <strong>数字签名</strong></li>
 </ul>
-<div align="center"><br><br><img src="/images/9.jpg" alt="数字签名过程"><br><br></div>
+<center> 
+
+<p><img src="/images/9.jpg" alt="数字签名过程"></p>
+<center>
 
 <p>　　验证A的身份：<strong>私钥加密，公钥解密</strong></p>
 <h2 id="三、RSA算法的原理"><a href="#三、RSA算法的原理" class="headerlink" title="三、RSA算法的原理"></a>三、RSA算法的原理</h2><h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><p>　　a)发送者产生两个不相等的质数P和q (保密)</p>
@@ -257,7 +261,7 @@
 <p>　　若计算：任意给定正整数n，请问在小于等于n的正整数之中，有多少个与n构成互质关系？（比如，在1到8之中，有多少个数与8构成互质关系？）</p>
 <p>计算这个值的方法就叫做欧拉函数，以φ(n)表示。在1到8之中，与8形成互质关系的是1、3、5、7，所以 φ(n) = 4。    </p>
 <p>　　欧拉函数的通用公式如下：</p>
-<p>​                            p(n)=n(1-1/P1)(1-1/P2)(1-1/P3)……(1-1/Pr)</p>
+<p>​                            <center>p(n)=n(1-1/P1)(1-1/P2)(1-1/P3)……(1-1/Pr)<center></center></center></p>
 <p>　　其中n可以看成一系列质数的积:    n=P~1~^k1^P~2~^k2^…P~r~^kr^</p>
 <p>​    <strong>3、欧拉定理</strong></p>
 <p>　　欧拉函数的用处，在于欧拉定理。“欧拉定理”指：如果两个正整数a和n互质，则n的欧拉函数φ(n) 可以让下面的等式成立:</p>
@@ -383,7 +387,7 @@
 <p><img src="/images/19.jpg" alt=""></p>
 <p>　　皮一下：从最终结果可以看出，RSA so easy！结果就完全印证了以上挂你单了吧！！！</p>
 <p>（完）</p>
-
+</center></center></center>
       
 
       
