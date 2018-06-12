@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://yoursite.com/images/sjjg7.jpg">
 <meta property="og:image" content="http://yoursite.com/images/sjjg8.jpg">
 <meta property="og:image" content="http://yoursite.com/images/sjjg9.jpg">
-<meta property="og:updated_time" content="2018-06-12T12:22:06.760Z">
+<meta property="og:updated_time" content="2018-06-12T13:31:31.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-线性表">
 <meta name="twitter:description" content="俗话说，好记性不如烂笔头，刚学了数据结构线性表，万一以后又忘了，或者有时候记着又找起来很耽误时间呢。所以就在这记录一下吧。">
@@ -201,14 +201,10 @@
 <li>线性表的每个数据元素的类型都相同。</li>
 </ol>
 <h1 id="二、线性表的顺序存储结构"><a href="#二、线性表的顺序存储结构" class="headerlink" title="二、线性表的顺序存储结构"></a>二、线性表的顺序存储结构</h1><ol>
-<li><p>线性表的顺序存储结构指的是用一段地址连续的存储单元依次存储线性表的数据元素。</p>
-</li>
-<li><p>若采用数组来实现线性表的顺序存储结构，则数组的长度是存放线性表的存储空间的长度，存储分配后这个量一般是不变的；线性表的长度是线性表中数据元素的个数，随着线性表插入和删除操作的进行，这个量是变化的。在任意时刻，线性表的长度应该小于等于数组的长度。 </p>
-</li>
-<li><p>地址计算方法：线性表不像数组那样起始下标是0，而是1。</p>
-</li>
-<li><p>采用C语言的一维数组来实现线性表的顺序存储结构，定义结构代码如下：</p>
-</li>
+<li>线性表的顺序存储结构指的是用一段地址连续的存储单元依次存储线性表的数据元素。</li>
+<li>若采用数组来实现线性表的顺序存储结构，则数组的长度是存放线性表的存储空间的长度，存储分配后这个量一般是不变的；线性表的长度是线性表中数据元素的个数，随着线性表插入和删除操作的进行，这个量是变化的。在任意时刻，线性表的长度应该小于等于数组的长度。 </li>
+<li>地址计算方法：线性表不像数组那样起始下标是0，而是1。</li>
+<li>采用C语言的一维数组来实现线性表的顺序存储结构，定义结构代码如下：</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#define OK 1  </span><br><span class="line">#define ERROR 0  </span><br><span class="line">#define TRUE 1  </span><br><span class="line">#define FALSE 0  </span><br><span class="line">#define MAXSIZE 20 /* 存储空间初始分配量 */  </span><br><span class="line">typedef int Status;          /* Status是函数的返回类型,其值是函数结果状态代码，如OK等 */  </span><br><span class="line">typedef int ElemType;        /* ElemType类型根据实际情况而定，这里假设为int */  </span><br><span class="line">typedef struct  </span><br><span class="line">&#123;  </span><br><span class="line">   ElemType data[MAXSIZE];        /* 数组，存储数据元素 */  </span><br><span class="line">   int length;                                /* 线性表当前长度 */  </span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
 <ol start="5">
@@ -218,9 +214,8 @@
 <ol start="6">
 <li>插入操作：线性表的顺序存储结构在插入数据时的实现过程如下图：</li>
 </ol>
-<center>
+<center><br><br><img src="/images/sjjg1.jpg" alt=""><br><br></center>
 
-<p><img src="/images/sjjg1.jpg" alt=""><center></center></p>
 <p>插入算法的思路： </p>
 <p>　　1）如果插入位置不合理，抛出异常；</p>
 <p>　　2）如果线性表长度大于等于数组长度，则抛出异常或动态增加容量；</p>
@@ -232,9 +227,8 @@
 <ol start="7">
 <li>删除操作：线性表的顺序存储结构删除元素过程如下图： </li>
 </ol>
-<center>
+<center><br><br><img src="/images/sjjg2.jpg" alt=""><br><br></center>
 
-<p><img src="/images/sjjg2.jpg" alt=""><center></center></p>
 <p>删除算法的思路：</p>
 <p>　　1）如果删除位置不合理，抛出异常；</p>
 <p>　　2）取出删除元素；</p>
@@ -248,9 +242,10 @@
 <li><p>线性表的顺序存储结构优缺点如下图:</p>
 </li>
 </ol>
-<center>
+<center><br><br><img src="/images/sjjg3.jpg" alt=""><br><br></center>
 
-<p><img src="/images/sjjg3.jpg" alt=""><center></center></p>
+
+
 <h1 id="三、线性表的链式存储结构"><a href="#三、线性表的链式存储结构" class="headerlink" title="三、线性表的链式存储结构"></a>三、线性表的链式存储结构</h1><ol>
 <li><p>线性表链式存储结构定义：用一组任意的存储单元存储线性表的数据元素，这组存储单元可以是连续的，也可以是不连续的。这就意味着这些数据元素可以存在内存未被占用的任意位置。除了要存数据元素信息外，还要存储它的后继元素的存储地址。</p>
 </li>
@@ -265,26 +260,17 @@
 <li><p>为了操作方便，可以在单链表的第一个结点前附设一个结点，称为头结点。头结点的数据域可以不存储任何信息，其指针域存储指向第一个结点的指针。如下图：</p>
 </li>
 </ol>
-<center>
-
-<p><img src="/images/sjjg4.jpg" alt=""></p>
-<center>
+<center><br><br><img src="/images/sjjg4.jpg" alt=""><br><br></center>
 
 <ol start="7">
 <li>头指针与头结点的异同，如下图 :</li>
 </ol>
-<center>
-
-<p><img src="/images/sjjg5.jpg" alt=""></p>
-<center>
+<center><br><br><img src="/images/sjjg5.jpg" alt=""><br><br></center>
 
 <ol start="8">
 <li>单链表的存储示意图。 </li>
 </ol>
-<center>
-
-<p><img src="/images/sjjg6.jpg" alt=""></p>
-<center>
+<center><br><br><img src="/images/sjjg6.jpg" alt=""><br><br></center>
 
 <ol start="9">
 <li>用C语言的结构指针来描述单链表，如： </li>
@@ -305,10 +291,7 @@
 <li><p>单链表的插入.只需执行<code>s-&gt;next=p-&gt;next</code>;<code>p-&gt;next=s</code>即可，但是这两句代码的执行次序可不能改变。 对于带有头节点的的单链表的表头和表尾插入的情况如下图：</p>
 </li>
 </ol>
-<center>
-
-<p><img src="/images/sjjg7.jpg" alt=""></p>
-<center>
+<center><br><br><img src="/images/sjjg7.jpg" alt=""><br><br></center>
 
 <p>单链表第i个数据插入节点的算法思路：</p>
 <p>　　1）声明一结点p指向链表头结点，初始化j从1开始；</p>
@@ -360,10 +343,7 @@
 <ol start="17">
 <li>单链表结构与顺序存储结构优缺点, 如下： </li>
 </ol>
-<center>
-
-<p><img src="/images/sjjg8.jpg" alt=""></p>
-<center>
+<center><br><br><img src="/images/sjjg8.jpg" alt=""><br><br></center>
 
 
 
@@ -396,10 +376,7 @@
 <ol start="8">
 <li>静态链表的优缺点：总的来说，静态链表其实是为了给没有指针的高级语言设计的一种实现单链表能力的方法。其优缺点如下图:</li>
 </ol>
-<center>
-
-<p><img src="/images/sjjg9.jpg" alt=""></p>
-<center>
+<center><br><br><img src="/images/sjjg9.jpg" alt=""><br><br></center>
 
 
 
@@ -433,7 +410,7 @@
 </ul>
 </li>
 </ul>
-</center></center></center></center></center></center></center></center></center></center></center></center></center></center></center>
+
       
 
       
