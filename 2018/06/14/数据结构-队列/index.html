@@ -6,19 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Yfliu的博客</title>
+  <title>数据结构-队列 | Yfliu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="西安电子科技大学通信工程专业研究生刘渊峰">
-<meta name="keywords" content="Java,后台">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yfliu的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="昨天写了一篇关于数据结构栈的知识，今天有空就整理了一下队列。像栈一样，队列（queue）也是一种线性表，它的特性是先进先出，插入在一端，删除在另一端。把两者之间对比来看，可以发现各有优缺点吧！！！">
+<meta name="keywords" content="算法,队列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-队列">
+<meta property="og:url" content="http://yoursite.com/2018/06/14/数据结构-队列/index.html">
 <meta property="og:site_name" content="Yfliu的博客">
-<meta property="og:description" content="西安电子科技大学通信工程专业研究生刘渊峰">
+<meta property="og:description" content="昨天写了一篇关于数据结构栈的知识，今天有空就整理了一下队列。像栈一样，队列（queue）也是一种线性表，它的特性是先进先出，插入在一端，删除在另一端。把两者之间对比来看，可以发现各有优缺点吧！！！">
 <meta property="og:locale" content="China">
+<meta property="og:image" content="http://yoursite.com/images/sjjgduilie.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg16.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg17.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg18.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg19.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg20.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg21.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg22.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg23.jpg">
+<meta property="og:image" content="http://yoursite.com/images/sjjg24.jpg">
+<meta property="og:updated_time" content="2018-06-14T07:58:22.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yfliu的博客">
-<meta name="twitter:description" content="西安电子科技大学通信工程专业研究生刘渊峰">
+<meta name="twitter:title" content="数据结构-队列">
+<meta name="twitter:description" content="昨天写了一篇关于数据结构栈的知识，今天有空就整理了一下队列。像栈一样，队列（queue）也是一种线性表，它的特性是先进先出，插入在一端，删除在另一端。把两者之间对比来看，可以发现各有优缺点吧！！！">
+<meta name="twitter:image" content="http://yoursite.com/images/sjjgduilie.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yfliu的博客" type="application/atom+xml">
   
@@ -158,16 +170,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-数据结构-队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据结构-队列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/14/数据结构-队列/">数据结构-队列</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构-队列
     </h1>
   
 
@@ -184,11 +194,83 @@
 <p>　　昨天写了一篇关于数据结构栈的知识，今天有空就整理了一下队列。像栈一样，队列（queue）也是一种线性表，它的特性是先进先出，插入在一端，删除在另一端。把两者之间对比来看，可以发现各有优缺点吧！！！</p>
 <center><br><br><img src="/images/sjjgduilie.jpg" alt=""><br><br></center>
 </blockquote>
-        
-          <a class="article-more-a" href="/2018/06/14/数据结构-队列/#more">more >></a>
-        
+<a id="more"></a>
+<h1 id="一、队列的定义"><a href="#一、队列的定义" class="headerlink" title="一、队列的定义"></a>一、队列的定义</h1><p>1、队列是只允许在一端进行插入操作，而在另一端进行删除操作的线性表。队列有顺序队列和链队列，顺序队列在这里分成循环队列。</p>
+<p>2、队列是一种先进先出的线性表，简称<code>FIFO</code>。允许插入的一端为队尾，允许删除的一端称为对头。如队列<code>q=(a1,a2,.......,an)</code>的示意图如下：</p>
+<center><br><br><img src="/images/sjjg16.jpg" alt=""><br><br></center>
+
+<h1 id="二、循环队列"><a href="#二、循环队列" class="headerlink" title="二、循环队列"></a>二、循环队列</h1><p>1、队列顺序存储：假设队列有n个元素，则顺序存储的队列需要建立一个大于n的数组，并把队列的所有元素存储在数组的前n个单元，数组下标为0的一端即是对头；然后入队操作就是在队尾加一个元素，不需要移动任何元素，所以时间复杂度是O(1)；但是出队是在对头，即下标为0的位置，所以后面的所有元素得向前移动，以保证下标为0的位置不为空，时间复杂度为O(n)。</p>
+<p>2、在1的情况下，如果不限制队列的元素必须存储在数组的前n个单元这一条件，则出队的性能就会大大增加，即对头不需要一定在下标为0的位置。如下图：</p>
+<center><br><br><img src="/images/sjjg17.jpg" alt=""><br><br></center>
+
+<p>3、在2的情况下为了避免当只有一个元素时，对头和队尾重合使处理变麻烦，所以用front指针指向对头元素，rear指针指向队尾元素的下一个位置。当<code>front</code>等于<code>rear</code>时，就是空队列。如下图 ：</p>
+<center><br><br><img src="/images/sjjg18.jpg" alt=""><br><br></center>
+
+<p>4、如下图所示，当入队a5时，<code>rear</code>指针都移动到数组之外去了，且如果接着入队的话，就会产生数组越界的错误，可实际上队列在下标为0和1的地方还是空闲的，把该种现象叫做“假溢出”。 </p>
+<center><br><br><img src="/images/sjjg19.jpg" alt=""><br><br></center>
+
+<p>5、循环队列定义：解决假溢出的办法就是后面满了，就再从头开始，也就是头尾想接的循环，把队列的这种头尾想接的顺序存储结构称为循环队列。 </p>
+<p>6、采用循环队列，如下图，此时<code>font</code>等于<code>rear</code>，是队列满时，但是在没采用循环队列的3的情况下，<code>front</code>等于<code>rear</code>是空队列的情况，此时采取的办法是当<code>front=rear</code>时依然是定义的空队列，而当数组中还有一个空闲空间时就定义是队列满时。如下图左边部分就认为是队列满，而不允许出现下图右边部分的情况。</p>
+<center><br><br><img src="/images/sjjg20.jpg" alt=""><br><br></center>
+
+<p>7、采用6中定义队列满时，上图左边部分是一种满时情况，此时<code>rear</code>比<code>front</code>小，它们相差1，如下图也是一种满时情况，此时<code>rear</code>比<code>front</code>大，它们相差整整一圈。所以如果队列的最大尺寸为<code>QueueSize</code>，那么队列满的条件是<code>(rear + 1) % QueueSize = front</code>。 </p>
+<center><br><br><img src="/images/sjjg21.jpg" alt=""><br><br></center>
+
+<p>8、采用6中定义队列满时，如上图当<code>rear</code>大于<code>front</code>，此时队列的长度计算方式是：<code>rear-front</code>。如6中的图的左边部分所示，当<code>rear</code>小于<code>front</code>，此时队列长度分为两段，分别是<code>QueueSize-fron</code>t和<code>0+rear</code>，即<code>rear-front+QueueSize</code>，当图中<code>rear</code>不是指向1，而是指向0，这里的两段的计算方式也适合，所以通用的计算队列长度公式为：<code>(rear - front + QueueSize) % QueueSize</code>。</p>
+<p> 9、循环队列的顺序存储结构代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#define OK 1  </span><br><span class="line">#define ERROR 0  </span><br><span class="line">#define TRUE 1  </span><br><span class="line">#define FALSE 0  </span><br><span class="line">#define MAXSIZE 20 /* 存储空间初始分配量 */  </span><br><span class="line">typedef int Status;   </span><br><span class="line">typedef int QElemType; /* QElemType类型根据实际情况而定，这里假设为int */  </span><br><span class="line">/* 循环队列的顺序存储结构 */  </span><br><span class="line">typedef struct  </span><br><span class="line">&#123;  </span><br><span class="line">    QElemType data[MAXSIZE];  </span><br><span class="line">    int front;      /* 头指针 */  </span><br><span class="line">    int rear;       /* 尾指针，若队列不空，指向队列尾元素的下一个位置 */  </span><br><span class="line">&#125;SqQueue;</span><br></pre></td></tr></table></figure>
+<p>10、循环队列的初始化代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* 初始化一个空队列Q */  </span><br><span class="line">Status InitQueue(SqQueue *Q)  </span><br><span class="line">&#123;  </span><br><span class="line">    Q-&gt;front = 0;  </span><br><span class="line">    Q-&gt;rear = 0;  </span><br><span class="line">    return  OK;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  11、循环队列求队列长度代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* 返回Q的元素个数，也就是队列的当前长度 */  </span><br><span class="line">int QueueLength(SqQueue Q)  </span><br><span class="line">&#123;  </span><br><span class="line">    return  (Q.rear - Q.front + MAXSIZE) % MAXSIZE;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>12、循环队列的入队列操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* 若队列未满，则插入元素e为Q新的队尾元素 */  </span><br><span class="line">Status EnQueue(SqQueue *Q, QElemType e)  </span><br><span class="line">&#123;  </span><br><span class="line">    if ((Q-&gt;rear + 1) % MAXSIZE == Q-&gt;front)  /* 队列满的判断 */  </span><br><span class="line">    &#123;  </span><br><span class="line">        return ERROR;  </span><br><span class="line">    &#125;     </span><br><span class="line">    Q-&gt;data[Q-&gt;rear] = e;         /* 将元素e赋值给队尾 */  </span><br><span class="line">    Q-&gt;rear=(Q-&gt;rear+1) % MAXSIZE;  /* rear指针向后移一位置， */  </span><br><span class="line">                                    /* 若到最后则转到数组头部 */  </span><br><span class="line">    return  OK;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 13、循环队列的出队列操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* 若队列不空，则删除Q中队头元素，用e返回其值 */  </span><br><span class="line">Status DeQueue(SqQueue *Q, QElemType *e)  </span><br><span class="line">&#123;  </span><br><span class="line">    if (Q-&gt;front == Q-&gt;rear)          /* 队列空的判断 */  </span><br><span class="line">    &#123;  </span><br><span class="line">        return ERROR;  </span><br><span class="line">    &#125;     </span><br><span class="line">    *e = Q-&gt;data[Q-&gt;front];               /* 将队头元素赋值给e */  </span><br><span class="line">    Q-&gt;front=(Q-&gt;front+1)%MAXSIZE;        /* front指针向后移一位置， */  </span><br><span class="line">                                        /* 若到最后则转到数组头部 */  </span><br><span class="line">    return  OK;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、队列的链式存储结构及实现"><a href="#三、队列的链式存储结构及实现" class="headerlink" title="三、队列的链式存储结构及实现"></a>三、队列的链式存储结构及实现</h1><p>1、将队列的链式存储结构简称为链队列，为了操作方便，将对头指针指向链队列的头结点，而队尾指针指向终端结点，当<code>front</code>和<code>rear</code>都指向头结点时就是空队列，如下图：</p>
+<center><br><br><img src="/images/sjjg22.jpg" alt=""><br><br></center>
+
+<p>2、链队列的结构代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#define OK 1  </span><br><span class="line">#define ERROR 0  </span><br><span class="line">#define TRUE 1  </span><br><span class="line">#define FALSE 0  </span><br><span class="line">#define MAXSIZE 20           /* 存储空间初始分配量 */  </span><br><span class="line">typedef int Status;   </span><br><span class="line">typedef int QElemType;       /* QElemType类型根据实际情况而定，这里假设为int */  </span><br><span class="line">/* 结点结构 */  </span><br><span class="line">struct QNode           </span><br><span class="line">&#123;  </span><br><span class="line">   QElemType data;  </span><br><span class="line">   struct QNode *next;  </span><br><span class="line">&#125;;  </span><br><span class="line">typedef struct QNode *QueuePtr;   </span><br><span class="line">/* 队列的链表结构 */  </span><br><span class="line">typedef struct            </span><br><span class="line">&#123;  </span><br><span class="line">   QueuePtr front, rear;      /* 队头、队尾指针 */  </span><br><span class="line">&#125;LinkQueue;</span><br></pre></td></tr></table></figure>
+<p> 3、入队操作：插入示意图如下：</p>
+<center><br><br><img src="/images/sjjg23.jpg" alt=""><br><br></center>
+
+<p> 实现代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* 插入元素e为Q的新的队尾元素 */  </span><br><span class="line">Status EnQueue(LinkQueue *Q, QElemType e)  </span><br><span class="line">&#123;   </span><br><span class="line">    QueuePtr s = (QueuePtr)malloc(sizeof(struct QNode));  </span><br><span class="line">    if(!s) /* 存储分配失败 */  </span><br><span class="line">    &#123;  </span><br><span class="line">        exit(OVERFLOW);  </span><br><span class="line">    &#125;     </span><br><span class="line">    s-&gt;data = e;  </span><br><span class="line">    s-&gt;next = NULL;  </span><br><span class="line">    Q-&gt;rear-&gt;next = s;    /* 把拥有元素e的新结点s赋值给原队尾结点的后继，见图中① */  </span><br><span class="line">    Q-&gt;rear = s;     /* 把当前的s设置为队尾结点，rear指向s，见图中② */  </span><br><span class="line">    return OK;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、出队操作：出队操作时就是头结点的后继结点出队，将头结点的后继改为它后面的结点，若链表除头结点外只剩一个元素时，需要将<code>rear</code>指向头结点，如下图：</p>
+<center><br><br><img src="/images/sjjg24.jpg" alt=""><br><br></center>
+
+<p>实现代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* 若队列不空,删除Q的队头元素,用e返回其值,并返回OK,否则返回ERROR */  </span><br><span class="line">Status DeQueue(LinkQueue *Q, QElemType *e)  </span><br><span class="line">&#123;  </span><br><span class="line">    QueuePtr p;  </span><br><span class="line">    if(Q-&gt;front == Q-&gt;rear)  </span><br><span class="line">    &#123;  </span><br><span class="line">        return ERROR;  </span><br><span class="line">    &#125;     </span><br><span class="line">    p = Q-&gt;front-&gt;next;             /* 将欲删除的队头结点暂存给p，见图中① */  </span><br><span class="line">    *e = p-&gt;data;                  /* 将欲删除的队头结点的值赋值给e */  </span><br><span class="line">    Q-&gt;front-&gt;next = p-&gt;next;     /* 将原队头结点的后继p-&gt;next赋值给头结点后继，见图中② */  </span><br><span class="line">    if(Q-&gt;rear == p)           /* 若队头就是队尾，则删除后将rear指向头结点，见图中③ */  </span><br><span class="line">    &#123;  </span><br><span class="line">        Q-&gt;rear = Q-&gt;front;  </span><br><span class="line">    &#125;     </span><br><span class="line">    free(p);  </span><br><span class="line">    return OK;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="四、总结回顾"><a href="#四、总结回顾" class="headerlink" title="四、总结回顾"></a>四、总结回顾</h1><p>　　在该篇博客中，我们学习了队列。结合上一篇知道了两者都是特殊的线性表，相当于对线性表也进行了一遍复习。接下来就总结一下两者的区别：</p>
+<p>　　栈（Stack）是仅限在线性表表尾进行插入和删除操作的线性表。</p>
+<p>　　队列（Queue）是只允许在一端进行插入操作，另一端进行删除操作的线性表。</p>
+<p>　　它们都可以使用顺序存储结构来实现，但是会有一些弊端，不过也可以通过各自的技巧来解决，像两栈共享空间、循环队列。 </p>
+<p>　　当然它们也可以使用链式存储结构来实现。至于哪种实现更好，就取决于在实际使用中的场景了。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -212,16 +294,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/14/数据结构-队列/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/14/数据结构-队列/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/13/数据结构-栈/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构-栈</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -241,752 +382,14 @@
 
 
 
-
-  
-    <article id="post-数据结构-栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/数据结构-栈/">数据结构-栈</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/13/数据结构-栈/" class="archive-article-date">
-  	<time datetime="2018-06-13T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>　　生活中我们常常碰到这样的情况：浏览网页时，按后退键是一个返回刚刚浏览的一个网址,而不是最先开始浏览的或者是前几个任何一个的网址。为什么呢？？？这其实就是利用了栈后进先出的原理。</p>
-<center>
-
-<p><img src="/images/sjjgzhan.jpg" alt=""></p>
-<p></p>
-</center></blockquote>
-        
-          <a class="article-more-a" href="/2018/06/13/数据结构-栈/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/13/数据结构-栈/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构-线性表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/12/数据结构-线性表/">数据结构-线性表</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/12/数据结构-线性表/" class="archive-article-date">
-  	<time datetime="2018-06-12T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>　　俗话说，好记性不如烂笔头，刚学了数据结构线性表，想着万一以后又忘了，或者有时候记着又找起来很耽误时间呢。所以就在这记录一下吧。嘻嘻~</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/06/12/数据结构-线性表/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">线性表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/12/数据结构-线性表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/数据结构基础知识/">数据结构基础知识</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/11/数据结构基础知识/" class="archive-article-date">
-  	<time datetime="2018-06-11T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>数据结构的重要性不言而喻，以下就是最好的证明： </p>
-<p>　　数据结构是计算机专业的基础课程，但也是一门不太容易学好的课。曾经有人说过一个段子：如果你交给某人一个程序，你将折磨他一整天；如果你教会某人如何编写程序，你讲折磨他一辈子。同一个结果由于使用不同的算法产生不同效益。可想而知，数据结构的重要性不言而喻，以下就是最好的证明：</p>
-<p>程序设计 = 数据结构 + 算法 </p>
-<p>这个公式也说明了<strong>数据结构</strong> 与 <strong>算法</strong> 难分难解的关系。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/06/11/数据结构基础知识/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/11/数据结构基础知识/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/31/HTML/">HTML详解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/31/HTML/" class="archive-article-date">
-  	<time datetime="2018-05-31T13:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一篇讲解web前端HTML的内容。HTML：（标签固定的XML）超文本标记语言，一种纯文本类型的语言。它是用来设计网页的标记语言，用该语言编写的文件，以.html或者.htm为后缀，由浏览器解释执行。在HTML页面上，可以嵌套用脚本语言编写的程序段，如JavaScript。。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/05/31/HTML/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网页</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/31/HTML/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-RSA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/24/RSA/">RSA公钥算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/24/RSA/" class="archive-article-date">
-  	<time datetime="2018-05-24T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>　　如果你问我，哪一种算法最重要？哪一种算法最常用？我可能会回答<a href="http://zh.wikipedia.org/wiki/%E5%85%AC%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6" target="_blank" rel="noopener">“公钥加密算法”</a>。因为它是计算机通信安全的基石，保证了加密数据不会被破解和加强了身份验证。你可以想象一下，信用卡交易被破解的后果。</p>
-<p>　　本篇文章将详细讲解公钥算法RSA，进入正题之前，我先简单介绍一下，什么是”公钥加密算法”。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/05/24/RSA/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">公钥</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">非对称，加密</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/24/RSA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/07/mysql/">mysql</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/07/mysql/" class="archive-article-date">
-  	<time datetime="2018-05-07T08:07:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>​        MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。本人将详细讲解入门数据库的增删改查等操作。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/05/07/mysql/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MYSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/07/mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-daily_zheteng" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/25/daily_zheteng/">日常折腾日记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/25/daily_zheteng/" class="archive-article-date">
-  	<time datetime="2018-04-25T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>俗话说，生活就是不断的折腾，恰好自己是个这样的人。可能就是这样一个虽然不是很年轻了，但是心态总是年轻的，看到一些有趣的或者有意思的，总是忍不住想看看，或者试试。但是有时候又觉得自己不再年轻了，有些东西虽然当时记着了，但是后来又忘了，或者有时候记着又找起来很耽误时间。所以就在这记录一下吧。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/04/25/daily_zheteng/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">资源</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">收集</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/25/daily_zheteng/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-你好-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/29/你好-hexo/">你好,hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/29/你好-hexo/" class="archive-article-date">
-  	<time datetime="2018-03-29T02:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/29/你好-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/29/post/">post</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/29/post/" class="archive-article-date">
-  	<time datetime="2018-03-29T02:31:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/29/post/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1011,8 +414,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
