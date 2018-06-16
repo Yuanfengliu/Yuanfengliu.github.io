@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://yoursite.com/images/sjjg34.jpg">
 <meta property="og:image" content="http://yoursite.com/images/sjjg35.jpg">
 <meta property="og:image" content="http://yoursite.com/images/sjjg36.jpg">
-<meta property="og:updated_time" content="2018-06-16T15:24:04.761Z">
+<meta property="og:updated_time" content="2018-06-16T15:32:26.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-字符串">
 <meta name="twitter:description" content="串可厉害了。不信？请看下面分解。">
@@ -199,7 +199,7 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="一、串的定义"><a href="#一、串的定义" class="headerlink" title="一、串的定义"></a>一、串的定义</h1><p>1、串的定义：串（string）是由零个或多个字符组成的有限序列，又名叫字符串。一般记为<code>s=&quot;a1a2.......an&quot;(n&gt;=0)</code>，其中s是串的名称，用双引号（有些书中是用单引号）括起来的字符序列是串的值，注意引号不属于串的内容。<code>ai(1&lt;=i&lt;=n)</code>可以是字母、数字或其他字符，i就是该字符在串中的位置。串中的字符数目n称为串的长度，定义中的“有限”指的是n是一个有限的数值。零个字符的串称为空串，它的长度为0，可以直接用两双引号表示，也可以用希腊字母<code>“Φ”</code>来表示。所谓的序列说明串的相邻字符之间具有前驱和后继的关系。<br>2、空格串：是只包含空格的串，注意与空串的区别，空格串是有内容有长度的，而且可以不止一个空格。<br>3、子串与主串：串中任意个数的连续字符组成的子序列称为该串的子串，相应地，包含子串的串称为主串。<br>4、子串在主串中的位置就是子串的第一个字符在主串中的序号。<br>5、串的逻辑结构与线性表类似，但是不同之处在于串中元素仅由一个字符组成。</p>
-<h1 id="二、串的比较"><a href="#二、串的比较" class="headerlink" title="二、串的比较"></a>二、串的比较</h1><p>1、串在计算机中的大小取决于它们挨个字母的前后顺序，事实上，串的比较是通过组成串的字符之间的编码来进行的，而字符的编码指的是字符在对应字符集中的序号。<br>2、常用的字符是使用标准的ASCⅡ编码，是由7位二进制数表示一个字符，总共可以表示128个字符；后来扩展ASCⅡ码由8位二进制数表示一个字符，总共可以表示256个字符；后来有了Unicode编码，常用的是由16位的二进制数表示一个字符，总共可以表示约6.5万多个字符；为了和ASCⅡ码兼容，Unicode的前256个字符与ASCⅡ码完全相同。<br>3、两个串相等必须是它们串的长度以及它们各个对应位置的字符都相等时才算是相等。<br>2、判断两个串不相等的定义：给定两个串：<code>s=&quot;a1a2......an&quot;</code>，<code>t=&quot;b1b2......bm&quot;</code>，当满足以下条件之一时，<code>s&lt;t</code>：<br>　　1）n&lt;m，且<code>ai=bi(i=1,2,......,n)</code>。比如hap&lt;happy。<br>　　2）存在某个<code>k&lt;=min(m, n)</code>，使得<code>ai=bi(i=1,2,.......,k-1)，ak&lt;bk</code>。比如s=”happen”，t=”happy”，两串的前4个字母都相同，而两串第5个字母（K值），字母e&lt;y，所以s&lt;t。</p>
+<h1 id="二、串的比较"><a href="#二、串的比较" class="headerlink" title="二、串的比较"></a>二、串的比较</h1><p>1、串在计算机中的大小取决于它们挨个字母的前后顺序，事实上，串的比较是通过组成串的字符之间的编码来进行的，而字符的编码指的是字符在对应字符集中的序号。<br>2、常用的字符是使用标准的ASCⅡ编码，是由7位二进制数表示一个字符，总共可以表示128个字符；后来扩展ASCⅡ码由8位二进制数表示一个字符，总共可以表示256个字符；后来有了Unicode编码，常用的是由16位的二进制数表示一个字符，总共可以表示约6.5万多个字符；为了和ASCⅡ码兼容，Unicode的前256个字符与ASCⅡ码完全相同。<br>3、两个串相等必须是它们串的长度以及它们各个对应位置的字符都相等时才算是相等。<br>2、判断两个串不相等的定义：给定两个串：<code>s=&quot;a1a2......an&quot;</code>，<code>t=&quot;b1b2......bm&quot;</code>，当满足以下条件之一时，<code>s&lt;t</code>：<br>　　1）n&lt;m，且<code>ai=bi(i=1,2,......,n)</code>。比如hap&lt;happy。<br>　　2）存在某个<code>k&lt;=min(m, n)</code>，使得<code>ai=bi(i=1,2,.......,k-1)，ak&lt;bk</code>。比如<code>s=&quot;happen&quot;</code>，<code>t=&quot;happy&quot;</code>，两串的前4个字母都相同，而两串第5个字母（K值），字母e&lt;y，所以s&lt;t。</p>
 <h1 id="三、串的顺序存储结构"><a href="#三、串的顺序存储结构" class="headerlink" title="三、串的顺序存储结构"></a>三、串的顺序存储结构</h1><p>1、串的顺序存储结构是用一组地址连续的存储单元来存储串中的字符序列的。按照预定义的大小，为每个定义的串变量分配一个固定长度的存储区，一般是用定长数组来定义，所以存在一个预定义的最大串长度，一般可以将实际的串长度值保存在数组的0下标位置，也有的会定义存储在数组的最后一个下标位置，也有的会规定在串值后面加一个不计入串长度的结束标记字符，比如C语言的<code>“\0”</code>来表示串值的终结。如下图，此时要知道串的长度就需要遍历计算一下了。</p>
 <center><br><br><img src="/images/sjjg25.jpg" alt=""><br><br></center>
 
