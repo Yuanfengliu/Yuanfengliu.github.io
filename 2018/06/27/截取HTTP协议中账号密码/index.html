@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 网页 | Yfliu的博客</title>
+  <title>wireshark捕获http协议账号密码 | Yfliu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="西安电子科技大学通信工程专业研究生刘渊峰">
-<meta name="keywords" content="Java,后台">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yfliu的博客">
-<meta property="og:url" content="http://yoursite.com/tags/网页/index.html">
+  <meta name="description" content="你是否知道：每当你在网站上输入用户名和密码后敲回车键，实际上将你的密码发送出去。这个你当然知道。毕竟，除此之外，又有什么办法可以向网站验证自己的身份?">
+<meta name="keywords" content="wireshark,http,密码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wireshark捕获http协议账号密码">
+<meta property="og:url" content="http://yoursite.com/2018/06/27/截取HTTP协议中账号密码/index.html">
 <meta property="og:site_name" content="Yfliu的博客">
-<meta property="og:description" content="西安电子科技大学通信工程专业研究生刘渊峰">
+<meta property="og:description" content="你是否知道：每当你在网站上输入用户名和密码后敲回车键，实际上将你的密码发送出去。这个你当然知道。毕竟，除此之外，又有什么办法可以向网站验证自己的身份?">
 <meta property="og:locale" content="China">
+<meta property="og:image" content="http://yoursite.com/images/wireshark2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/wireshark3.jpg">
+<meta property="og:image" content="http://yoursite.com/images/wireshark4.jpg">
+<meta property="og:image" content="http://yoursite.com/images/wireshark5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/wireshark6.jpg">
+<meta property="og:updated_time" content="2018-06-27T12:58:59.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yfliu的博客">
-<meta name="twitter:description" content="西安电子科技大学通信工程专业研究生刘渊峰">
+<meta name="twitter:title" content="wireshark捕获http协议账号密码">
+<meta name="twitter:description" content="你是否知道：每当你在网站上输入用户名和密码后敲回车键，实际上将你的密码发送出去。这个你当然知道。毕竟，除此之外，又有什么办法可以向网站验证自己的身份?">
+<meta name="twitter:image" content="http://yoursite.com/images/wireshark2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yfliu的博客" type="application/atom+xml">
   
@@ -158,68 +165,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-截取HTTP协议中账号密码" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/31/HTML/" class="archive-article-date">
-  	<time datetime="2018-05-31T13:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/31/HTML/">HTML详解</a>
+    <h1 class="article-title" itemprop="name">
+      wireshark捕获http协议账号密码
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/27/截取HTTP协议中账号密码/" class="archive-article-date">
+  	<time datetime="2018-06-27T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>　　你是否知道：每当你在网站上输入用户名和密码后敲回车键，实际上将你的密码发送出去。这个你当然知道。毕竟，除此之外，又有什么办法可以向网站验证自己的身份?</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>　　可是，如果网站允许你使用HTTP协议验证身份，捕获该流量，之后通过局域网(甚至通过互联网)从任何机器来分析此流量其实很简单。这意味着，只有网站使用HTTP协议用于验证身份，有人就能解使用该网站的密码。要想通过互联网来破解网站密码，你就需要能够位于网关或中央集线器上(如果你获得访问权，流量通过其来转发，BGP路由器也可以)。</p>
+<p>　　但是从局域网来破解密码很容易;与此同时，你不由得想：HTTP到底有多不安全。你可以针对室友、办公网络或者甚至学校、学院或大学网络，试着破解密码，假设网络允许广播流量，你的网卡又可以设置成混杂模式。</p>
+<p>　　本博客我将针对一个简单的网站试一下截获。我将隐藏密码的一部分(完全出于隐私)。出于本文的需求，我将在一台机器上演示每一步过程。至于各个网友，可以在两台VirtualBox/VMWare/物理机器之间试一下。</p>
+<h2 id="二、步骤"><a href="#二、步骤" class="headerlink" title="二、步骤"></a>二、步骤</h2><p>1、获取截获网站的IP，我选择学校图书馆。可以ping一下该网址的地址，就可以返回IP地址。</p>
+<center><br><br><img src="/images/wireshark2.jpg" alt=""><br><br></center>
+
+<p>2、工具使用之前的安装与环境变量的设置，本博客就不废话了，直接登入wireshark，激动网络链接，试一下截获数据包看下。</p>
+<center><br><br><img src="/images/wireshark3.jpg" alt=""><br><br></center>
+
+<p>3、设置过滤器：http and ip.addr==202.117.124.133</p>
+<center><br><br><img src="/images/wireshark4.jpg" alt=""><br><br></center>
+
+<p>4、用户登入网站，该网站是超文本协议，抓取数据包。</p>
+<center><br><br><img src="/images/wireshark5.jpg" alt=""><br><br></center>
+
+<p>5、查看wireshark工具，停止捕获，删选POST登入。用时找到自己登入的网址登入信息，发现：</p>
+<center><br><br><img src="/images/wireshark6.jpg" alt=""><br><br></center>
+
+<p>　　可以得到本机与网络传输的数据包，传输协议；尤其在post登入操作中，知道账号密码都是明文传输的（这里因为隐私所以在密码上打码了，）。无需多加什么破解软件和破解网站就可以代替真实用户执行相关操作。对真实用户有可能造成相当的损害！！！</p>
+<h2 id="三、结束语"><a href="#三、结束语" class="headerlink" title="三、结束语"></a>三、结束语</h2><p>　　经过试验，在同一个局域网内，同样容易实施截获。坦率地说，每一个网站所有者都实现SSL技术来保护密码安全是不可能的，因为采用标准的SSL（TLS）技术需要每个URL高达1500美元的费用。即使有些网站在用户登入过程中进行过程中实施散列机制，起码密码已经过散列处理，相当于增添了一道障碍，以免别人轻轻松松就能破解网站密码。但是一般用户不清楚有没有保护机制或者是否每次都记得提醒自己。因此，平常当我们享受互联网带来给我方便时，也要注意隐私的安全保护。</p>
+<h5 id="注意：这篇指南文章纯属供学习之用，请勿用于歪道。"><a href="#注意：这篇指南文章纯属供学习之用，请勿用于歪道。" class="headerlink" title="注意：这篇指南文章纯属供学习之用，请勿用于歪道。"></a><strong>注意</strong>：这篇指南文章纯属供学习之用，请勿用于歪道。</h5>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wireshark</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网页</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">http</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">密码</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/27/截取HTTP协议中账号密码/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/16/数据结构-字符串/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构-字符串</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -244,9 +381,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
