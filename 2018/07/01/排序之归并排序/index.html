@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: 工具 | Yfliu的博客</title>
+  <title>排序算法之归并（Java语言） | Yfliu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="西安电子科技大学通信工程专业研究生刘渊峰">
-<meta name="keywords" content="Java,后台">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yfliu的博客">
-<meta property="og:url" content="http://yoursite.com/categories/工具/index.html">
+  <meta name="description" content="归并排序也可以叫合并排序,英文单词叫做merge它是与插入排序、交换排序、选择排序不同的一类排序方法，不同之处在于：它要求：待排序序列是由若干个有序子序列组成。">
+<meta name="keywords" content="排序,Java，归并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法之归并（Java语言）">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/排序之归并排序/index.html">
 <meta property="og:site_name" content="Yfliu的博客">
-<meta property="og:description" content="西安电子科技大学通信工程专业研究生刘渊峰">
+<meta property="og:description" content="归并排序也可以叫合并排序,英文单词叫做merge它是与插入排序、交换排序、选择排序不同的一类排序方法，不同之处在于：它要求：待排序序列是由若干个有序子序列组成。">
 <meta property="og:locale" content="China">
+<meta property="og:image" content="http://yoursite.com/images/guibing.jpg">
+<meta property="og:updated_time" content="2018-08-20T14:22:11.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yfliu的博客">
-<meta name="twitter:description" content="西安电子科技大学通信工程专业研究生刘渊峰">
+<meta name="twitter:title" content="排序算法之归并（Java语言）">
+<meta name="twitter:description" content="归并排序也可以叫合并排序,英文单词叫做merge它是与插入排序、交换排序、选择排序不同的一类排序方法，不同之处在于：它要求：待排序序列是由若干个有序子序列组成。">
+<meta name="twitter:image" content="http://yoursite.com/images/guibing.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yfliu的博客" type="application/atom+xml">
   
@@ -158,132 +161,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-排序之归并排序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/24/RSA/" class="archive-article-date">
-  	<time datetime="2018-05-24T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/24/RSA/">RSA公钥算法</a>
+    <h1 class="article-title" itemprop="name">
+      排序算法之归并（Java语言）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/01/排序之归并排序/" class="archive-article-date">
+  	<time datetime="2018-07-01T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>归并排序也可以叫合并排序,英文单词叫做merge它是与插入排序、交换排序、选择排序不同<br>的一类排序方法，不同之处在于：它要求：待排序序列是由若干个有序子序列组成。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="一、基本思想："><a href="#一、基本思想：" class="headerlink" title="一、基本思想："></a>一、基本思想：</h3><p>归并排序是<strong>将两个或两个以上的有序序列合并成一个新的有序序列</strong>。本篇文章介绍的就是归并排序主要是将两个有序数据序列合并成一个新的有序序列 。</p>
+<p>合并的方法是比较各子序列的第一个记录的键值，最小的一个就是排序的第一个记录的键值。取出这个记录，继续比较各子序列现有的第一个记录的键值，便可以找出排序后的第二个键值。然后开始递归，最终得到排序结果。</p>
+<p>所以归并排序的基础就是<strong>合并</strong>。</p>
+<p><strong>1）有序序列的合并</strong></p>
+<p>归并排序的核心是：两个有序子序列的合并。</p>
+<p>此算法的执行时间为：O(n-h+1)。</p>
+<p><strong>2）二路归并排序</strong></p>
+<p>二路归并排序是将两个有序表合并成一个有序表的排序方法。</p>
+<p>二路归并排序是稳定的。</p>
+<p>归并排序算法的时间复杂度为O（nlog2n）</p>
+<h3 id="二、Java代码如下："><a href="#二、Java代码如下：" class="headerlink" title="二、Java代码如下："></a>二、Java代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">public class guiBingpaixu2 &#123;</span><br><span class="line">	static int number=0;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] a = &#123;24, 5, 98, 28, 99, 56, 34, 2 &#125;;</span><br><span class="line">        printArray(&quot;排序前：&quot;,a);</span><br><span class="line">        System.out.println(&quot;开始排序&quot;);</span><br><span class="line">        Sort(a, 0, a.length - 1);</span><br><span class="line">        printArray(&quot;排序后：&quot;,a);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    private static void printArray(String pre,int[] a) &#123;//打印输出</span><br><span class="line">        System.out.print(pre+&quot;\n&quot;);</span><br><span class="line">        for(int i=0;i&lt;a.length;i++)</span><br><span class="line">            System.out.print(a[i]+&quot;\t&quot;);    </span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">    private static void Sort(int[] a, int left, int right) &#123;</span><br><span class="line">        if(left&gt;=right)</span><br><span class="line">            return;    </span><br><span class="line">        int mid = (left + right) / 2;//二路归并排序里面有两个Sort，多路归并排序里面写多个Sort就可以了</span><br><span class="line">        Sort(a, left, mid);</span><br><span class="line">        Sort(a, mid + 1, right);</span><br><span class="line">        merge(a, left, mid, right);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">    private static void merge(int[] a, int left, int mid, int right) &#123;</span><br><span class="line">    </span><br><span class="line">        int[] tmp = new int[a.length];</span><br><span class="line">        int r1 = mid + 1;</span><br><span class="line">        int Index = left;</span><br><span class="line">        int flag=left;</span><br><span class="line">// 逐个归并。意思：将拿到的2个数组（每个数组元素可能是1，2个或者4个等等。将这2个数组排序，小的放在左边，大的放在右边）</span><br><span class="line">//以下这个判断，左右2部分，只有一部分存入数组；剩余的是排好序的，会在40行或者44行的语句进行存入</span><br><span class="line">        while(left &lt;=mid &amp;&amp; r1 &lt;= right) &#123;</span><br><span class="line">            if (a[left] &lt;= a[r1]) //小的放在临时数组左边</span><br><span class="line">                tmp[Index++] = a[left++];</span><br><span class="line">            else				//大的放在右边</span><br><span class="line">                tmp[Index++] = a[r1++];</span><br><span class="line">        &#125;</span><br><span class="line">//看上情况，可能将左边剩余的归并。</span><br><span class="line">        while (left &lt;=mid) &#123;</span><br><span class="line">            tmp[Index++] = a[left++];</span><br><span class="line">        &#125;</span><br><span class="line"> //看上情况，可能将右边剩余的归并</span><br><span class="line">        while ( r1 &lt;= right ) &#123;</span><br><span class="line">            tmp[Index++] = a[r1++];</span><br><span class="line">        &#125; </span><br><span class="line">            System.out.println(&quot;第&quot;+(++number)+&quot;趟排序:&quot;);</span><br><span class="line">//从临时数组拷贝到原数组</span><br><span class="line">        while(flag&lt;=right)&#123;</span><br><span class="line">             a[flag]=tmp[flag];</span><br><span class="line">             //输出中间归并排序结果</span><br><span class="line">             System.out.print(a[flag]+&quot;\t&quot;);</span><br><span class="line">             flag++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<center><br><br><img src="/images/guibing.jpg" alt=""><br><br></center>
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">公钥</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">非对称，加密</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java，归并</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/01/排序之归并排序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/25/daily_zheteng/" class="archive-article-date">
-  	<time datetime="2018-04-25T03:49:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/27/截取HTTP协议中账号密码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">截取http协议中账号密码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/25/daily_zheteng/">日常折腾日记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">资源</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">收集</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/工具//" class="article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -308,10 +369,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
